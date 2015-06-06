@@ -1,0 +1,124 @@
+/////////////// SASS VARIABLES ///////////////
+
+@import "_variables.scss"; // All the variables to Import 
+
+/////////////// SASS LIBRARIES ///////////////
+
+@import "bourbon", "neat"; // Mixin & Grid Library
+
+/////////////// MIXINS ///////////////
+
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($boxshadow) {
+      -webkit-box-shadow:$boxshadow;
+      -moz-box-shadow:$boxshadow;
+      box-shadow:$boxshadow;
+}
+
+/////////////// RESET ///////////////
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    margin: 0;
+    font-size: 16px;
+    cursor: default; 
+  } 
+
+h1, h2, h3, h4, h5, h6, p, blockquote, figure, ol, ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+
+button {
+	cursor: pointer;
+}
+
+button, input, textarea, select {
+	outline:none;
+	max-width: 100%; 
+}
+
+iframe {
+	max-width:100%;
+}
+
+/////////////// GRID ///////////////
+
+// Settings
+
+$gutter: 0px;
+$grid-columns: 12;
+
+// Breakpoints
+
+$mobile: 768px; 
+$tablet: 768px; 
+$screen: 992px; 
+$bigScreen: 1200px; 
+
+$mobileGrid: new-breakpoint(max-width 768px 12);
+$tabletGrid: new-breakpoint(max-width 992px 12);
+
+.row { @include outer-container($globalMaxWidth); }
+
+.sidebar { @include span-columns(3); margin-bottom:$globalMargin; @include media($mobile) { display: none; } }
+
+.col-1 { @include span-columns(1); @include media($mobileGrid) { @include span-columns(12); } }
+.col-2 { @include span-columns(2); @include media($mobileGrid) { @include span-columns(12); } }
+.col-3 { @include span-columns(3); @include media($mobileGrid) { @include span-columns(12); } }
+.col-4 { @include span-columns(4); @include media($mobileGrid) { @include span-columns(12); } }
+.col-5 { @include span-columns(5); @include media($mobileGrid) { @include span-columns(12); } }
+.col-6 { @include span-columns(6); @include media($mobileGrid) { @include span-columns(12); } }
+.col-7 { @include span-columns(7); @include media($mobileGrid) { @include span-columns(12); } }
+.col-8 { @include span-columns(8); @include media($mobileGrid) { @include span-columns(12); } }
+.col-9 { @include span-columns(9); @include media($mobileGrid) { @include span-columns(12); } }
+.col-10 { @include span-columns(10); @include media($mobileGrid) { @include span-columns(12); } }
+.col-11 { @include span-columns(11); @include media($mobileGrid) { @include span-columns(12); } }
+.col-12 { @include span-columns(12); @include media($mobileGrid) { @include span-columns(12); } }
+
+/////////////// CLASSES ///////////////
+
+p { margin-bottom: $globalMargin;}
+
+.margin { margin-bottom: $globalMargin; }
+
+
+
+
+
+
+
+
+
+
+

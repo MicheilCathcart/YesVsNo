@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html ng-app="yvn">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Yes Vs No</title>
+
+    <!-- Style sheets -->
+    <link href="css/style.css" rel="stylesheet"/>
+
+    <!-- Library Scripts -->
+    <script src="js/angular.js"></script>
+
+    <!-- Modules -->
+    <script src="app/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="app/comments/comments-controller.js"></script>
+    
+</head>
+
+<body ng-controller="comments">
+	
+	<h1>{{ title }}</h1>
+	
+	<p>This is yes vs no, a place to cast your vote on important issues</p>
+	
+	<div class="margin" ng-repeat="comment in comments | orderBy:'-commentPoints' ">
+		<h4>{{ comment.userName }} -  <strong>{{ comment.userPoints }}</strong></h4>
+		<div>{{ comment.userComment }} -  <strong>{{ comment.commentPoints }}</strong></div>
+		<div>{{ comment.userVote }}</div>
+		<button>Reply</button>
+		<button ng-click="commentUp(comment)">Up</button>
+		<button ng-click="commentDown(comment)">Down</button>
+	</div>
+	
+
+</body>
+
+</html> 
