@@ -6,7 +6,7 @@
     
         function($scope) {
 
-            $scope.title = 'Yes Vs No Comments';
+            $scope.title = 'Do electric sheep dream?';
 			
 			// Data
 			
@@ -36,6 +36,7 @@
             ];
             
             $scope.addComment = function() {
+	            if(!$scope.userComment || $scope.userComment === '') { return; }
 	            $scope.comments.push(
 	            {
 		            userName: $scope.userName, 
