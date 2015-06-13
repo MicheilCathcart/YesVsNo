@@ -1,39 +1,16 @@
 (function() {
 
-    var yvn = angular.module('yvn.controllers', []);
+    var module = angular.module('yvn.comments');
 
-    yvn.controller('comments', ['$scope',
+    module.controller('comments', ['$scope', 'getComments',
     
-        function($scope) {
+        function($scope, getComments) {
 
             $scope.title = 'Do electric sheep dream?';
 			
 			// Data
 			
-            $scope.comments = [ 
-	            {
-					userName: "Jim Jones",
-					userComment: "I think this is absolutely true",
-					userPoints: 1245,
-					commentPoints: 10,
-					userVote: "Yes"
-	            }, 
-	            {
-		            userName: "David Masbourough",
-					userComment: "I do not think this is very true, it could be anything!",
-					userPoints: 865,
-					commentPoints: 13,
-					userVote: "No"
-	
-	            }, 
-	            {
-		            userName: "Julie Grey",
-					userComment: "Perhaps, I am a little undecided",
-					userPoints: 555,
-					commentPoints: 8,
-					userVote: "Undecided"
-	            }
-            ];
+            $scope.comments = getComments.comments;
             
             $scope.addComment = function() {
 	            if(!$scope.userComment || $scope.userComment === '') { return; }

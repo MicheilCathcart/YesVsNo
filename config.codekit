@@ -4,8 +4,8 @@
 "files": {
 	"\/app\/app.js": {
 		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/app\/app.js",
 		"outputAbbreviatedPath": "\/app\/min\/app-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -15,8 +15,8 @@
 		},
 	"\/app\/comments\/comments-controller.js": {
 		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/app\/comments\/comments-controller.js",
 		"outputAbbreviatedPath": "\/app\/comments\/min\/comments-controller-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -24,12 +24,23 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/app\/comments\/min\/comments-controller-min.js": {
+	"\/app\/comments\/comments-factory.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/app\/comments\/comments-factory.js",
+		"outputAbbreviatedPath": "\/app\/comments\/min\/comments-factory-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/app\/min\/app-min.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/app\/comments\/min\/comments-controller-min.js",
-		"outputAbbreviatedPath": "\/app\/comments\/min\/min\/comments-controller-min-min.js",
+		"inputAbbreviatedPath": "\/app\/min\/app-min.js",
+		"outputAbbreviatedPath": "\/app\/min\/min\/app-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -64,8 +75,8 @@
 		},
 	"\/js\/angular.js": {
 		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/js\/angular.js",
 		"outputAbbreviatedPath": "\/js\/min\/angular-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -125,7 +136,7 @@
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
 	"displayValue": "YesVsNo",
-	"displayValueWasSetByUser": 0,
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "compass_gray"
 	},
 "projectSettings": {
