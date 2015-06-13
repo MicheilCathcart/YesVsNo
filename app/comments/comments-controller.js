@@ -12,7 +12,6 @@
 			
             $scope.comments = [ 
 	            {
-		            id: 1,
 					userName: "Jim Jones",
 					userComment: "I think this is absolutely true",
 					userPoints: 1245,
@@ -20,7 +19,6 @@
 					userVote: "Yes"
 	            }, 
 	            {
-		            id: 2,
 		            userName: "David Masbourough",
 					userComment: "I do not think this is very true, it could be anything!",
 					userPoints: 865,
@@ -29,7 +27,6 @@
 	
 	            }, 
 	            {
-		            id: 3,
 		            userName: "Julie Grey",
 					userComment: "Perhaps, I am a little undecided",
 					userPoints: 555,
@@ -37,6 +34,23 @@
 					userVote: "Undecided"
 	            }
             ];
+            
+            $scope.addComment = function() {
+	            $scope.comments.push(
+	            {
+		            userName: $scope.userName, 
+		            userComment: $scope.userComment,
+		            userPoints: 0,
+					commentPoints: 0,
+					userVote: $scope.userVote
+		        }
+		        )
+		        
+		        $scope.userName = '';
+		        $scope.userComment = '';
+		        $scope.userVote = '';
+		        
+            }
             
             // Buttons
             

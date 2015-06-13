@@ -32,8 +32,16 @@
 		<button ng-click="commentUp(comment)">Up</button>
 		<button ng-click="commentDown(comment)">Down</button>
 	</div>
-	
 
+	<form ng-submit="addComment()">
+		<input type="text" placeholder="Name" ng-model="userName"></input>
+		<textarea rows="4" placeholder="Comment" ng-model="userComment"></textarea>
+		<button type="button" ng-click="userVote = 'Yes'">Yes</button>
+		<button type="button" ng-click="userVote = 'No'">No</button>
+		<button type="button" ng-click="userVote = 'Maybe'">Maybe</button>
+	  	<button type="submit">Add Comment</button>
+	</form>
+	
 </body>
 
 </html> 
