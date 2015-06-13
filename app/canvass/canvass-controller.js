@@ -1,16 +1,16 @@
 (function() {
 
-    var module = angular.module('yvn.comments');
+    var module = angular.module('yvn.canvass');
 
-    module.controller('comments', ['$scope', 'getComments',
+    module.controller('canvass', ['$scope', 'comments',
     
-        function($scope, getComments) {
+        function($scope, comments) {
 
             $scope.title = 'Do electric sheep dream?';
 			
 			// Data
 			
-            $scope.comments = getComments.comments;
+            $scope.comments = comments.comments;
             
             $scope.addComment = function() {
 	            if(!$scope.userComment || $scope.userComment === '') { return; }

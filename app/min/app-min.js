@@ -1,1 +1,0 @@
-!function(){angular.module("yvn",["yvn.comments"]),angular.module("yvn.comments",[])}();

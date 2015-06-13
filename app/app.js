@@ -1,13 +1,19 @@
 (function() {
 	
-// Create the Yes Vs No App
+// Yes Vs No App
 
 var app = angular.module('yvn', [
-  'yvn.comments',
-  'ui.router'
+	'yvn.home',
+	'yvn.canvass',
+	'ui.router'
 ]);
 
-// Yes Vs No Config
+// Dependencies
+
+angular.module('yvn.home', []);
+angular.module('yvn.canvass', []);
+	
+// Route Config
 
 app.config([
 	'$stateProvider',
@@ -18,10 +24,12 @@ app.config([
 			.state('home', {
 				url:'/home',
 				templateUrl:'/home.html',
+				controller: 'home'
 			})
-			.state('electricSheep', {
-				url:'/electric-sheep',
-				templateUrl:'/electric-sheep.html',
+			.state('canvass', {
+				url:'/canvass',
+				templateUrl:'/canvass.html',
+				controller: 'canvass'
 			});
 			
 			$urlRouterProvider.otherwise('home');
@@ -29,8 +37,4 @@ app.config([
 	}
 ])
 
-// Yes Vs No App Dependencies
-
-angular.module('yvn.comments', []);
-	
 })();

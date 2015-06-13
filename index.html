@@ -20,10 +20,16 @@
 
     <!-- App -->
     <script src="app/app.js"></script>
+    
+    <!-- Home -->
+    <script src="app/home/home-controller.js"></script>
 
-    <!-- Comments -->
-    <script src="app/comments/comments-controller.js"></script>
-    <script src="app/comments/comments-factory.js"></script>
+    <!-- Canvass -->
+    <script src="app/canvass/canvass-controller.js"></script>
+    
+    	<!-- Comments -->
+    	<script src="app/canvass/comments/comments-factory.js"></script>
+    	
     
 </head>
 
@@ -46,7 +52,8 @@
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+					<li class="active"><a ui-sref="home">Home<span class="sr-only">(current)</span></a></li>
+					<li ><a ui-sref="canvass">Canvass<span class="sr-only">(current)</span></a></li>
 				</ul>
 				
 				<ul class="nav navbar-nav navbar-right">
@@ -75,9 +82,22 @@
 	</nav>
 </header>
 
-<body ng-controller="comments">
+<body>
 	
+	<ui-view></ui-view>
+
+<!-- Home -->
+
+<script type="text/ng-template" id="/home.html">
 	<div class="container">
+	<h1 class="margin">{{ title }}</h1>
+	</div>
+</script>
+
+<!-- Canvass -->
+
+<script type="text/ng-template" id="/canvass.html">
+<div class="container">
 	
 	<h1 class="margin">{{ title }}</h1>
 	
@@ -112,7 +132,8 @@
 		</div>
 	</form>
 	
-	</div>
+</div>
+</script>
 	
 </body>
 

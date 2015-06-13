@@ -1,11 +1,11 @@
 (function() {
 
-    var module = angular.module('yvn.comments');
+    var module = angular.module('yvn.canvass');
 
-    module.factory('getComments', [
+    module.factory('comments', [
 	    
 	    function() {
-		    var commentsObject = {
+		    var ob = {
 			    comments: [ 
 	            {
 					userName: "Jim Jones",
@@ -38,7 +38,7 @@
 	            }
             ]
 		    };
-		    return commentsObject;
+		    return ob;
 	    }
     ]);
     
