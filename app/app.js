@@ -27,7 +27,7 @@ app.config([
 				controller: 'home'
 			})
 			.state('canvass', {
-				url:'/canvass',
+				url:'/canvass/{id}',
 				templateUrl:'/canvass.html',
 				controller: 'canvass'
 			});

@@ -2,11 +2,17 @@
 
     var module = angular.module('yvn.home');
 
-    module.controller('home', ['$scope', 
+    module.controller('home', ['$scope','canvass', 
     
-        function($scope) {
+        function($scope, canvass) {
 
             $scope.title = 'Homepage';
+            
+            $scope.canvasses = canvass.canvass;
+            
+            $scope.upsMinusDowns = function(canvass) {
+	            return "-" + canvass.ups - canvass.downs;
+            }
 			           
         }
     ]);

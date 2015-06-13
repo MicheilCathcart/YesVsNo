@@ -26,6 +26,7 @@
 
     <!-- Canvass -->
     <script src="app/canvass/canvass-controller.js"></script>
+    <script src="app/canvass/canvass-factory.js"></script>
     
     	<!-- Comments -->
     	<script src="app/canvass/comments/comments-factory.js"></script>
@@ -90,7 +91,11 @@
 
 <script type="text/ng-template" id="/home.html">
 	<div class="container">
-	<h1 class="margin">{{ title }}</h1>
+		<h1 class="margin">{{ title }}</h1>
+		<div class="margin" ng-repeat="canvass in canvasses | orderBy: upsMinusDowns">
+			<a><h4>{{ canvass.title }} {{ canvass.ups - canvass.downs }}</h4></a>
+			<h5>Total Votes: {{ canvass.votes }}</h5>
+		<div>
 	</div>
 </script>
 

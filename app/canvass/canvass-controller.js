@@ -2,9 +2,9 @@
 
     var module = angular.module('yvn.canvass');
 
-    module.controller('canvass', ['$scope', 'comments',
+    module.controller('canvass', ['$scope', 'comments', '$stateParams',
     
-        function($scope, comments) {
+        function($scope, comments, $stateParams) {
 
             $scope.title = 'Do electric sheep dream?';
 			
