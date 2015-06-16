@@ -1,0 +1,142 @@
+{
+	philosophical: [
+		{
+			_id: 1,
+			title: "Do Electric Sheep Dream",
+			level: 0,
+			user: "Jim Jones"
+		},
+		{
+			_id: 2,
+			title: "Does a rolling stone gather moss?",
+			level: 0,
+			user: "Jim Jones"
+		}
+		],
+	political: [
+		{
+			_id: 3,
+			title: "Who should be the next Prime Minister?",
+			level: 0,
+			user: "Jim Jones"
+		},
+		{
+			_id: 4,
+			title: "Should Russia Invade Ukraine?",
+			level: 0,
+			user: "Jim Jones"
+		}
+		]
+}
+
+{
+	_id: 1,
+	category: 'Philosophical',
+	title: "Do Electric Sheep Dream",
+	options: ['Yes','No'],
+	date: ISODate("2010-09-24"),
+	votes: [ 
+	            {
+					user: "Jim Jones",
+					age: 27,
+					location: '127.2234562, 127.123456',
+					gender: 'male',
+					income: '10,000 - 20,000',
+					ideology: 'socialist',
+					religion: 'agnostic',
+					vote: "Yes",
+					date: ISODate("2010-09-21")
+	            }, 
+	            {
+		            user: "Jeff Barber",
+					age: 22,
+					location: '127.2234562, 127.123456',
+					gender: 'male',
+					income: '10,000 - 20,000',
+					ideology: 'socialist',
+					religion: 'athiest',
+					vote: "Yes",
+					date: ISODate("2010-09-22")
+	            }, 
+	            {
+		            user: "Tammy Cuskelly",
+					age: 11,
+					location: '127.2234562, 127.123456',
+					gender: 'female',
+					income: '12,000 - 30,000',
+					ideology: 'communist',
+					religion: 'buddist',
+					vote: "Yes",
+					date: ISODate("2010-09-24")
+	            },
+	            {
+		            user: "Bridgette Random",
+					age: 63,
+					location: '127.2234562, 127.123456',
+					gender: 'female',
+					income: '10,000 - 20,000',
+					ideology: 'liberal',
+					religion: 'christian',
+					vote: "No",
+					date: ISODate("2010-09-27")
+				}
+            ],
+    comments: [
+				{
+					_id: 235346,
+					user: "Jim Jones",
+					vote: "Yes",
+					comment: "That is so true I cannot believe it!",
+					date: ISODate("2010-09-28"),
+					level: 0,
+					sources: [ 34567845, 7564576 ],
+					replies: [ 
+					{
+						_id: 7643562,
+						user: "Tammy Bob",
+						vote: "No",
+						comment: "That is so true I cannot believe it!",
+						date: ISODate("2010-09-28"),
+						level: 0,
+						sources: [ 34567845, 7564576 ],
+						replies: [ 
+						{
+							_id: 96746572,
+							user: "John Jones",
+							vote: "No",
+							comment: "That is so true I cannot believe it!",
+							date: ISODate("2010-09-29"),
+							level: 0,
+							sources: [ 34567845, 7564576 ]
+						}
+						]
+					},
+					{
+						_id: 5678735,
+						user: "Tammy Bob",
+						vote: "No",
+						comment: "That is so true I cannot believe it!",
+						date: ISODate("2010-09-24"),
+						level: 0,
+						sources: [ 34567845, 7564576 ]
+					}
+					]
+				}	
+				],
+	sources: [
+				{
+					_id: 5678735,
+					link: "http://www.source.com",
+					level: 0,
+					user: "Tammy Bob",
+					vote: "No"
+				},
+				{
+					_id: 5678735,
+					link: "http://www.source.com",
+					level: 0,
+					user: "John Jones",
+					vote: "No"
+				}
+	]
+}

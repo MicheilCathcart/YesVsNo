@@ -23,13 +23,11 @@
     
     <!-- Home -->
     <script src="app/home/home-controller.js"></script>
+    <script src="app/home/factories/get-list-factory.js"></script>
 
     <!-- Canvass -->
     <script src="app/canvass/canvass-controller.js"></script>
-    <script src="app/canvass/canvass-factory.js"></script>
-    
-    	<!-- Comments -->
-    	<script src="app/canvass/comments/comments-factory.js"></script>
+    <script src="app/canvass/factories/get-canvass-factory.js"></script>
     	
     
 </head>
@@ -92,9 +90,9 @@
 <script type="text/ng-template" id="/home.html">
 	<div class="container">
 		<h1 class="margin">{{ title }}</h1>
-		<div class="margin" ng-repeat="canvass in canvasses | orderBy: upsMinusDowns">
-			<a><h4>{{ canvass.title }} {{ canvass.ups - canvass.downs }}</h4></a>
-			<h5>Total Votes: {{ canvass.votes }}</h5>
+		<div class="margin" ng-repeat="item in list.philosophical | orderBy: votes">
+			<a><h4>{{ item.title }} {{ item.level }}</h4></a>
+			<h5>Total Votes: {{ item.votes }}</h5>
 		<div>
 	</div>
 </script>
@@ -106,17 +104,6 @@
 	
 	<h1 class="margin">{{ title }}</h1>
 	
-	<div class="margin" ng-repeat="comment in comments | orderBy:'-commentPoints' ">
-		<h4>{{ comment.userName }} -  <strong>{{ comment.userPoints }}</strong></h4>
-		<div>{{ comment.userComment }} -  <strong>{{ comment.commentPoints }}</strong></div>
-		<div>{{ comment.userVote }}</div>
-		<div class="btn-group" role="group" aria-label="...">
-			<button type="button" class="btn btn-default">Reply</button>
-			<button type="button" class="btn btn-default" ng-click="commentUp(comment)">Up</button>
-			<button type="button" class="btn btn-default" ng-click="commentDown(comment)">Down</button>
-		</div>
-	</div>
-
 	<form ng-submit="addComment()">
 		<div class="form-group">
 			<input class="form-control" type="text" placeholder="Name" ng-model="userName"></input>
@@ -137,8 +124,38 @@
 		</div>
 	</form>
 	
+	<hr>
+	
+		
+	<div ng-repeat="comment in comments | orderBy:'-level'" ng-include="'commentRender.html'">
+	
+	</div>
+
+	
+<!-- Comments Render -->
+
+<script type="text/ng-template" id="commentRender.html">
+
+	<div class="margin">
+				<h4>{{ comment.user }} -  <strong>{{ comment.date | date }}</strong></h4>
+				<div>{{ comment.comment }} -  <strong>{{ comment.level }}</strong></div>
+				<div>{{ comment.vote }}</div>
+				<div class="btn-group" role="group" aria-label="...">
+					<button type="button" class="btn btn-default">Reply</button>
+					<button type="button" class="btn btn-default" ng-click="commentUp(comment)">Up</button>
+					<button type="button" class="btn btn-default" ng-click="commentDown(comment)">Down</button>
+				</div>
+		</div>
+		
+		<div class="comments" ng-repeat="comment in comment.comments | orderBy:'-level'" ng-include="'commentRender.html'">
+	
+		</div>
+
+</script>
+
 </div>
 </script>
+
 	
 </body>
 

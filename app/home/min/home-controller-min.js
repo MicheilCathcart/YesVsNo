@@ -1,1 +1,1 @@
-!function(){var n=angular.module("yvn.home");n.controller("home",["$scope","canvass",function(n,s){n.title="Homepage",n.canvasses=s.canvass,n.upsMinusDowns=function(n){return"-"+n.ups-n.downs}}])}();
+!function(){var e=angular.module("yvn.home");e.controller("home",["$scope","getList",function(e,o){e.title="Homepage",e.list=o}])}();

@@ -2,25 +2,26 @@
 
     var module = angular.module('yvn.canvass');
 
-    module.controller('canvass', ['$scope', 'comments', '$stateParams',
+    module.controller('canvass', ['$scope', 'getCanvass', '$stateParams',
     
-        function($scope, comments, $stateParams) {
+        function($scope, getCanvass, $stateParams) {
 
             $scope.title = 'Do electric sheep dream?';
 			
 			// Data
 			
-            $scope.comments = comments.comments;
+            $scope.comments = getCanvass.comments;
             
             $scope.addComment = function() {
 	            if(!$scope.userComment || $scope.userComment === '') { return; }
 	            $scope.comments.push(
 	            {
-		            userName: $scope.userName, 
-		            userComment: $scope.userComment,
-		            userPoints: 0,
-					commentPoints: 0,
-					userVote: $scope.userVote
+		            id: Math.random(),
+		            user: $scope.userName, 
+		            comment: $scope.userComment,
+					level: 0,
+					vote: $scope.userVote,
+					date: new Date()
 		        }
 		        )
 		        
@@ -33,11 +34,11 @@
             // Buttons
             
             $scope.commentUp = function(comment) {
-	            comment.commentPoints +=1; 
+	            comment.level +=1; 
           	} 
             
             $scope.commentDown = function(comment) {
-	            comment.commentPoints -=1; 
+	            comment.level -=1; 
           	} 
             
         }
