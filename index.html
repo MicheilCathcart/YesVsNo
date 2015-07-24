@@ -21,6 +21,9 @@
     <!-- App -->
     <script src="app/app.js"></script>
     
+    <!-- Filters -->
+    <script src="app/filters/level.js"></script>
+    
     <!-- Home -->
     <script src="app/home/home-controller.js"></script>
     <script src="app/home/factories/get-list-factory.js"></script>
@@ -44,7 +47,9 @@
 				    <span class="icon-bar"></span>
 				    <span class="icon-bar"></span>
 			    </button>
-		    	<a class="navbar-brand" href="#">Yes vs No</a>
+		    	<a class="navbar-brand" href="#">
+			    	<img class="logo" src="images/yn logo.svg">
+		    	</a>
 		    </div>
 	
 	    	<!-- Collect the nav links, forms, and other content for toggling -->
@@ -136,20 +141,35 @@
 
 <script type="text/ng-template" id="commentRender.html">
 
-	<div class="margin">
-				<h4>{{ comment.user }} -  <strong>{{ comment.date | date }}</strong></h4>
-				<div>{{ comment.comment }} -  <strong>{{ comment.level }}</strong></div>
-				<div>{{ comment.vote }}</div>
-				<div class="btn-group" role="group" aria-label="...">
-					<button type="button" class="btn btn-default">Reply</button>
-					<button type="button" class="btn btn-default" ng-click="commentUp(comment)">Up</button>
-					<button type="button" class="btn btn-default" ng-click="commentDown(comment)">Down</button>
+	<div class="margin comment {{ comment.vote }}" ng-click="replyVisible = ! replyVisible">
+		
+			<div class="commentWrap">
+				<div>
+					<div class="user pull-left">
+						{{ comment.user }} 
+					</div>
+					<div class="level pull-right">
+						{{ comment.level | level }}{{ comment.level }}
+					</div>
+					<div class="clearfix"></div>
 				</div>
+				
+				<div class="comment-text">
+					{{ comment.comment }}
+				</div>
+			</div>
+			
+		<div ng-show="replyVisible" class="btn-group" role="group" aria-label="...">
+			<button type="button" class="btn btn-default">Reply</button>
+			<button type="button" class="btn btn-default" ng-click="commentUp(comment)">Up</button>
+			<button type="button" class="btn btn-default" ng-click="commentDown(comment)">Down</button>
 		</div>
 		
-		<div class="comments" ng-repeat="comment in comment.comments | orderBy:'-level'" ng-include="'commentRender.html'">
+	</div>
+			
+	<div class="replies" ng-repeat="comment in comment.comments | orderBy:'-level'" ng-include="'commentRender.html'">
 	
-		</div>
+	</div>
 
 </script>
 

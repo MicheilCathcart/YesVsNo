@@ -83,7 +83,18 @@
 												comment: "Another very believable comment I think!",
 												date: '2012-04-23T18:25:43.511Z',
 												level: 0,
-												sources: [ 34567845, 7564576 ]
+												sources: [ 34567845, 7564576 ],
+												comments: [
+													{
+													_id: 96746572,
+													user: "Another User",
+													vote: "No",
+													comment: "Oh Cool another embedded comment!",
+													date: '2012-04-23T18:25:43.511Z',
+													level: 0,
+													sources: [ 34567845, 7564576 ]
+													}
+												]
 											}
 											]
 										},
@@ -146,7 +157,7 @@
 										vote: "No"
 									}
 						]
-					}
+					};
 		    return ob;
 	    }
     ]);

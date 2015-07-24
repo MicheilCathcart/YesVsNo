@@ -68,6 +68,20 @@ iframe {
 	max-width:100%;
 }
 
+/////////////// FONTS ///////////////
+
+@font-face {
+    font-family: 'brandon_grotesquelight';
+    src: url('../fonts/brandon_light-webfont.eot');
+    src: url('../fonts/brandon_light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/brandon_light-webfont.woff2') format('woff2'),
+         url('../fonts/brandon_light-webfont.woff') format('woff'),
+         url('../fonts/brandon_light-webfont.ttf') format('truetype'),
+         url('../fonts/brandon_light-webfont.svg#brandon_grotesquelight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /////////////// GRID ///////////////
 
 // Settings
@@ -102,13 +116,46 @@ $tabletGrid: new-breakpoint(max-width 992px 12);
 .col-11 { @include span-columns(11); @include media($mobileGrid) { @include span-columns(12); } }
 .col-12 { @include span-columns(12); @include media($mobileGrid) { @include span-columns(12); } }
 
+/////////////// IMAGES ///////////////
+
+.logo { height: 20px; }
+
 /////////////// CLASSES ///////////////
+
+body { font-family: 'brandon_grotesquelight', serif; }
 
 p { margin-bottom: $globalMargin;}
 
 .margin { margin-bottom: $globalMargin; }
 
-.comments { padding-left: 50px; }
+/////////////// CANVASS ///////////////
+
+.comment { 
+	&.Yes {
+		.user { color: $colour1; }
+		.level { color: $colour1; }
+	}
+	&.No {
+		.user { color: $colour2; }
+		.level { color: $colour2; }
+	}
+}
+
+.comment {  }
+
+.commentWrap { padding-left: 20px; border-bottom: 1px solid #eee; padding-bottom: $globalMargin;} 
+
+.replies .comment .commentWrap { padding-left: 50px; }
+
+.replies .replies { margin-bottom: $globalMargin; }
+
+.replies .replies .comment { padding-left: 20px; border-bottom: 1px solid #eee; }
+
+.replies .replies .comment .commentWrap { border-bottom: none ; }
+
+/////////////// BOOTSTRAP OVERIDES ///////////////
+
+.navbar { @include border-radius(0); border-bottom: 0;}
 
 
 
