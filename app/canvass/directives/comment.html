@@ -1,0 +1,29 @@
+﻿<div class="comment {{ comment.vote }}"  ng-click="replyVisible = ! replyVisible">
+		
+	<div class="commentWrap" style="padding-left:{{ comment.tier * 40 }}px">
+		
+		<div class="commentTitle">
+			<div class="user pull-left">
+				{{ comment.user }}
+			</div>
+			<div class="level pull-right">
+				{{ comment.level | level }}{{ comment.level }}
+			</div>
+			<div class="clearfix"></div>
+		</div>
+				
+		<div class="comment-text">
+		{{ comment.comment }}
+		</div>
+		
+	</div>
+			
+	<div ng-show="replyVisible" class="btn-group" role="group" aria-label="...">
+		<button type="button" class="btn btn-default">Reply</button>
+		<button type="button" class="btn btn-default" ng-click="commentUp(comment)">Up</button>
+		<button type="button" class="btn btn-default" ng-click="commentDown(comment)">Down</button>
+	</div>
+		
+</div>
+			
+<comment class="replies" comment="comment" ng-repeat="comment in comment.comments | orderBy:'-level'" />

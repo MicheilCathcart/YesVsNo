@@ -2,17 +2,6 @@
 	
 	<h1 class="margin">{{ title }}</h1>
 	
-	<div class="margin" ng-repeat="comment in comments | orderBy:'-commentPoints' ">
-		<h4>{{ comment.userName }} -  <strong>{{ comment.userPoints }}</strong></h4>
-		<div>{{ comment.userComment }} -  <strong>{{ comment.commentPoints }}</strong></div>
-		<div>{{ comment.userVote }}</div>
-		<div class="btn-group" role="group" aria-label="...">
-			<button type="button" class="btn btn-default">Reply</button>
-			<button type="button" class="btn btn-default" ng-click="commentUp(comment)">Up</button>
-			<button type="button" class="btn btn-default" ng-click="commentDown(comment)">Down</button>
-		</div>
-	</div>
-
 	<form ng-submit="addComment()">
 		<div class="form-group">
 			<input class="form-control" type="text" placeholder="Name" ng-model="userName"></input>
@@ -24,7 +13,7 @@
 			<div class="btn-group" role="group" aria-label="...">
 				<button type="button" class="btn btn-default" ng-click="userVote = 'Yes'">Yes</button>
 				<button type="button" class="btn btn-default" ng-click="userVote = 'No'">No</button>
-				<button type="button" class="btn btn-default" ng-click="userVote = 'Maybe'">Maybe</button>
+				<button type="button" class="btn btn-default" ng-click="userVote = 'Maybe'">Neutral</button>
 			</div>
 		</div>
 		
@@ -33,4 +22,10 @@
 		</div>
 	</form>
 	
+	<hr class="">
+	
+	<comment comment="comment" ng-repeat="comment in comments | orderBy:'-level'">
+	
+	</comment>
+
 </div>

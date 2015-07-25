@@ -32,7 +32,7 @@
 {
 	_id: 1,
 	category: 'Philosophical',
-	title: "Do Electric Sheep Dream",
+	title: "Do Powerful Sheep Dream",
 	options: ['Yes','No'],
 	date: ISODate("2010-09-24"),
 	votes: [ 
@@ -86,7 +86,7 @@
 					_id: 235346,
 					user: "Jim Jones",
 					vote: "Yes",
-					comment: "That is so true I cannot believe it!",
+					comment: "Peer-reviewed paper published 1in the journal ü Human Reproduction.",
 					date: ISODate("2010-09-28"),
 					level: 0,
 					sources: [ 34567845, 7564576 ],
@@ -95,7 +95,9 @@
 						_id: 7643562,
 						user: "Tammy Bob",
 						vote: "No",
-						comment: "That is so true I cannot believe it!",
+						comment: "I promise I’m not trying to be a smartass, but trying to understand English language: does the comma in the title change the meaning? Because for me it does, but I’m not sure if that is my German-speaking brain at work or not.
+Because for me, “...born from frozen ovary, collected during...” reads as if it was the first time a child was ever born form a frozen ovary, and the rest ist just additional detail. Whereas without the comma, it would mean that it was the first time from 2a ovary removed ü in early puberty, not the first time altogether (as the article states in the last paragraph).
+Does English work that way?",
 						date: ISODate("2010-09-28"),
 						level: 0,
 						sources: [ 34567845, 7564576 ],
@@ -104,7 +106,7 @@
 							_id: 96746572,
 							user: "John Jones",
 							vote: "No",
-							comment: "That is so true I cannot believe it!",
+							comment: "Yes, English works exactly that way and the comma does change the meaning. “reads as if it was the first time a child was ever born form a frozen ovary” OP’s title does read that way, but according to the article that’s not the case. The title should say “World’s first baby born from frozen ovary collected during the mother’s childhood”.",
 							date: ISODate("2010-09-29"),
 							level: 0,
 							sources: [ 34567845, 7564576 ]
@@ -115,7 +117,7 @@
 						_id: 5678735,
 						user: "Tammy Bob",
 						vote: "No",
-						comment: "That is so true I cannot believe it!",
+						comment: "Level up! English +1 <br> Gratz!",
 						date: ISODate("2010-09-24"),
 						level: 0,
 						sources: [ 34567845, 7564576 ]

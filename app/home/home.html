@@ -1,5 +1,7 @@
 ﻿<div class="container">
-	
-	<h1 class="margin">{{ title }}</h1>
-	
+		<h1 class="margin">{{ title }}</h1>
+		<div class="margin" ng-repeat="item in list.philosophical | orderBy: votes">
+			<a><h4>{{ item.title }} {{ item.level }}</h4></a>
+			<h5>Total Votes: {{ item.votes }}</h5>
+		<div>
 </div>

@@ -141,17 +141,12 @@ p { margin-bottom: $globalMargin;}
 	}
 }
 
-.comment {  }
+.commentWrap { border-bottom: 1px solid #eee; padding-bottom: $globalMargin; padding-top: $globalMargin; padding-right: 40px; text-align: justify; } 
+.commentWrap:hover { background-color: #fbfbfb; cursor: pointer; } 
+.commentTitle { margin-bottom: 2px; }
 
-.commentWrap { padding-left: 20px; border-bottom: 1px solid #eee; padding-bottom: $globalMargin;} 
+hr { margin-bottom: 0; }
 
-.replies .comment .commentWrap { padding-left: 50px; }
-
-.replies .replies { margin-bottom: $globalMargin; }
-
-.replies .replies .comment { padding-left: 20px; border-bottom: 1px solid #eee; }
-
-.replies .replies .comment .commentWrap { border-bottom: none ; }
 
 /////////////// BOOTSTRAP OVERIDES ///////////////
 

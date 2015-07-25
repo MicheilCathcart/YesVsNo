@@ -23,17 +23,17 @@ app.config([
 		$stateProvider
 			.state('home', {
 				url:'/home',
-				templateUrl:'/home.html',
+				templateUrl:'app/home/home.html',
 				controller: 'home'
 			})
 			.state('canvass', {
 				url:'/canvass/{id}',
-				templateUrl:'/canvass.html',
+				templateUrl:'app/canvass/canvass.html',
 				controller: 'canvass'
 			});
 			
 			$urlRouterProvider.otherwise('home');
-		
+
 	}
 ])
 

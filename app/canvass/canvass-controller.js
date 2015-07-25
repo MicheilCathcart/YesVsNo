@@ -20,6 +20,7 @@
 		            user: $scope.userName, 
 		            comment: $scope.userComment,
 					level: 0,
+					tier: 1,
 					vote: $scope.userVote,
 					date: new Date()
 		        }

@@ -1,1 +1,0 @@
-!function(){var e=angular.module("yvn.home");e.controller("home",["$scope","getList",function(e,o){e.title="Homepage",e.list=o}])}();
