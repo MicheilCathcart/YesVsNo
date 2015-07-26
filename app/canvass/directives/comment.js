@@ -6,13 +6,14 @@
 	    
 		return {
 			restrict: 'E',
-			scope: { comment: '=' },
+			scope: { comment: '=', userVote: '='},
 			templateUrl: 'app/canvass/directives/comment.html',
 			compile: function(element) {
 				
 	            return RecursionHelper.compile(element, function(scope, element, attrs, ctrl, transcludeFn) {
 		            
 				// Link Function Defined Here
+				
 
 	            scope.commentUp = function(comment) {
 		            comment.level +=1; 
@@ -21,10 +22,6 @@
 	            scope.commentDown = function(comment) {
 			    	comment.level -=1; 
 	        	} 
-	        	
-	        	var awesome = function() {
-		        	console.log(true);
-	        	}
 	        	
 	        	scope.replyVisible = false; 
 	        		        	
@@ -38,7 +35,7 @@
 			            comment: scope.userComment,
 						level: 0,
 						tier: comment.tier + 1,
-						vote: "Yes",
+						vote: scope.userVote,
 						date: new Date()
 			        }
 		        )

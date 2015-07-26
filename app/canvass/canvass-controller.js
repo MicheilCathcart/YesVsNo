@@ -10,6 +10,9 @@
 			
 			// Data
 			
+			$scope.userVote = "Neutral"
+			$scope.userName = "Micheil Cathcart"
+			
             $scope.comments = getCanvass.comments;
             
             $scope.addComment = function() {
@@ -25,22 +28,10 @@
 					date: new Date()
 		        }
 		        )
-		        
-		        $scope.userName = '';
+		    
 		        $scope.userComment = '';
-		        $scope.userVote = '';
 		        
             }
-            
-            // Buttons
-            
-            $scope.commentUp = function(comment) {
-	            comment.level +=1; 
-          	} 
-            
-            $scope.commentDown = function(comment) {
-	            comment.level -=1; 
-          	} 
             
         }
     ]);

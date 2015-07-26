@@ -150,6 +150,11 @@ p { margin-bottom: $globalMargin;}
 		.level { color: $colour2; }
 		.vote-colour { fill: $colour2; }
 	}
+	&.Neutral {
+		.user { color: $neutral; }
+		.level { color: $neutral; }
+		.vote-colour { fill: $neutral; }
+	}
 }
 
 .commentWrap { border-bottom: 1px solid #eee; padding-bottom: $globalMargin; padding-top: $globalMargin; padding-right: 40px; text-align: justify; } 

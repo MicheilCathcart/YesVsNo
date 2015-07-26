@@ -1,20 +1,24 @@
 ﻿<div class="container">
 	
-	<h1 class="margin">{{ title }}</h1>
+	<div class="margin">
+		<div class="title pull-left">
+			<h1>{{ title }}</h1>
+		</div>
+		<div class="vote-toggle pull-right">
+			<div class="form-group">
+				<div class="btn-group" role="group" aria-label="...">
+					<button type="button" class="btn btn-default" ng-click="userVote = 'Yes'">Yes</button>
+					<button type="button" class="btn btn-default" ng-click="userVote = 'No'">No</button>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		</div>
 	
 	<form ng-submit="addComment()">
-		<div class="form-group">
-			<input class="form-control" type="text" placeholder="Name" ng-model="userName"></input>
-		</div>
+
 		<div class="form-group">
 			<textarea class="form-control" rows="4" placeholder="Comment" ng-model="userComment"></textarea>
-		</div>
-		<div class="form-group">
-			<div class="btn-group" role="group" aria-label="...">
-				<button type="button" class="btn btn-default" ng-click="userVote = 'Yes'">Yes</button>
-				<button type="button" class="btn btn-default" ng-click="userVote = 'No'">No</button>
-				<button type="button" class="btn btn-default" ng-click="userVote = 'Maybe'">Neutral</button>
-			</div>
 		</div>
 		
 		<div class="form-group">
@@ -24,7 +28,7 @@
 	
 	<hr class="">
 	
-	<comment comment="comment" ng-repeat="comment in comments | orderBy:'-level'">
+	<comment comment="comment" user-vote="userVote" ng-repeat="comment in comments | orderBy:'-level'">
 	
 	</comment>
 
