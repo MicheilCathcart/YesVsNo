@@ -21,6 +21,32 @@
 	            scope.commentDown = function(comment) {
 			    	comment.level -=1; 
 	        	} 
+	        	
+	        	var awesome = function() {
+		        	console.log(true);
+	        	}
+	        	
+	        	scope.replyVisible = false; 
+	        		        	
+	        	scope.addReply = function(comment) {
+	            if(!scope.userComment || scope.userComment === '') { return; }
+	            if (!comment.comments) { comment.comments = []; }
+	            comment.comments.push(
+		            {
+			            id: Math.random(),
+			            user: "Micheil Cathcart", 
+			            comment: scope.userComment,
+						level: 0,
+						tier: comment.tier + 1,
+						vote: "Yes",
+						date: new Date()
+			        }
+		        )
+		        		        
+		        scope.userComment = '';
+		        scope.replyVisible = false;
+		        
+            }
 
 	            });
         	}

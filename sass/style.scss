@@ -20,6 +20,11 @@
       box-shadow:$boxshadow;
 }
 
+@mixin clearfix() {
+    overflow: auto;
+    zoom: 1;
+}
+
 /////////////// RESET ///////////////
 
 html {
@@ -66,6 +71,10 @@ button, input, textarea, select {
 
 iframe {
 	max-width:100%;
+}
+
+svg {
+	display:block;
 }
 
 /////////////// FONTS ///////////////
@@ -134,16 +143,43 @@ p { margin-bottom: $globalMargin;}
 	&.Yes {
 		.user { color: $colour1; }
 		.level { color: $colour1; }
+		.vote-colour { fill: $colour1; }
 	}
 	&.No {
 		.user { color: $colour2; }
 		.level { color: $colour2; }
+		.vote-colour { fill: $colour2; }
 	}
 }
 
 .commentWrap { border-bottom: 1px solid #eee; padding-bottom: $globalMargin; padding-top: $globalMargin; padding-right: 40px; text-align: justify; } 
 .commentWrap:hover { background-color: #fbfbfb; cursor: pointer; } 
 .commentTitle { margin-bottom: 2px; }
+.replyArea { margin-top: 15px; }
+
+/////////////// COMMENT MENU ///////////////
+
+.comment-menu {
+	border-bottom: 1px solid #eee;
+	@include clearfix();
+	.button {
+		float:left;
+		width: 33.33333333333333%;
+		padding: 12px 0px;
+		border-right: 1px solid #eee;
+		cursor: pointer;
+		&.arrow { padding: 15px 0px 16px 0px; }
+		svg {
+			margin: 0 auto;
+			opacity: 0.3;
+		}
+		&:last-child { border-right: none; }
+		&:hover { 
+			background-color: #fbfbfb;
+			svg { opacity: 1; }
+		}
+	}
+} 
 
 hr { margin-bottom: 0; }
 
