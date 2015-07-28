@@ -11,7 +11,7 @@
 			// Data
 			
 			$scope.userVote = "Neutral"
-			$scope.userName = "Micheil Cathcart"
+			$scope.userName = "michsail"
 			
             $scope.comments = getCanvass.comments;
             

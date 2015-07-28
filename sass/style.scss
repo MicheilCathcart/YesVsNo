@@ -129,13 +129,43 @@ $tabletGrid: new-breakpoint(max-width 992px 12);
 
 .logo { height: 20px; }
 
-/////////////// CLASSES ///////////////
+/////////////// TEXT ///////////////
 
 body { font-family: 'brandon_grotesquelight', serif; }
 
 p { margin-bottom: $globalMargin;}
 
+/////////////// MARGINS ///////////////
+
 .margin { margin-bottom: $globalMargin; }
+
+/////////////// BUTTONS ///////////////
+
+.vote-toggle { 
+	.yes-button { 
+		background-color: $colour1; 
+		opacity: 0.9;
+		&.No { padding: 7px 0px; color: $colour1; }
+		&:hover { opacity: 1; }
+	}
+	.no-button { 
+		background-color: $colour2; 
+		opacity: 0.9;
+		&.Yes { padding: 7px 0px; color: $colour2; }
+		&:hover { opacity: 1; }
+	}
+	.neutral-button { background-color: $neutral; }
+	.yes-button, .no-button { 
+		padding: 7px 29px; display: inline-block; margin-right: 0px; color: white; font-size: 21px; cursor: pointer;
+		transition: padding 0.2s linear, color 0.2s linear; 
+	}
+}
+
+/////////////// DYNAMIC COLOURS ///////////////
+
+.Yes-Background { fill: $colour1; }
+.No-Background { fill: $colour2; }
+.Nuetral-Background { fill: $neutral; }
 
 /////////////// CANVASS ///////////////
 

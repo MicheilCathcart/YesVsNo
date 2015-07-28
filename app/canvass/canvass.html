@@ -2,18 +2,14 @@
 	
 	<div class="margin">
 		<div class="title pull-left">
-			<h1>{{ title }}</h1>
+			<h1>{{ title }} </h1>
 		</div>
 		<div class="vote-toggle pull-right">
-			<div class="form-group">
-				<div class="btn-group" role="group" aria-label="...">
-					<button type="button" class="btn btn-default" ng-click="userVote = 'Yes'">Yes</button>
-					<button type="button" class="btn btn-default" ng-click="userVote = 'No'">No</button>
-				</div>
-			</div>
+			<div class="yes-button {{ userVote }}" ng-click="userVote = 'Yes'">Yes</div>
+			<div class="no-button {{ userVote }}" ng-click="userVote = 'No'">No</div>
 		</div>
 		<div class="clearfix"></div>
-		</div>
+	</div>
 	
 	<form ng-submit="addComment()">
 

@@ -31,7 +31,7 @@
 	            comment.comments.push(
 		            {
 			            id: Math.random(),
-			            user: "Micheil Cathcart", 
+			            user: "michsail", 
 			            comment: scope.userComment,
 						level: 0,
 						tier: comment.tier + 1,
