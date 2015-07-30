@@ -15,6 +15,8 @@
 			
             $scope.comments = getCanvass.comments;
             
+            $scope.votes = getCanvass.votes;
+            
             $scope.addComment = function() {
 	            if(!$scope.userComment || $scope.userComment === '') { return; }
 	            $scope.comments.push(

@@ -20,8 +20,8 @@
 										income: '10,000 - 20,000',
 										ideology: 'socialist',
 										religion: 'agnostic',
-										vote: "Yes",
-										date: '2012-04-23T18:25:43.511Z'
+										vote: "No",
+										date: '2012-04-22T12:00:00+10:00'
 						            }, 
 						            {
 							            user: "Jeff Barber",
@@ -32,7 +32,7 @@
 										ideology: 'socialist',
 										religion: 'athiest',
 										vote: "Yes",
-										date: '2012-04-23T18:25:43.511Z'
+										date: '2012-04-23T09:00:00+10:00'
 						            }, 
 						            {
 							            user: "Tammy Cuskelly",
@@ -43,7 +43,7 @@
 										ideology: 'communist',
 										religion: 'buddist',
 										vote: "Yes",
-										date: '2012-04-23T18:25:43.511Z'
+										date: '2012-04-24T00:00:00+10:00'
 						            },
 						            {
 							            user: "Bridgette Random",
@@ -54,8 +54,97 @@
 										ideology: 'liberal',
 										religion: 'christian',
 										vote: "No",
-										date: '2012-04-23T18:25:43.511Z'
+										date: '2012-04-25T23:00:00+10:00'
+									},
+									{
+										user: "Jim Jones",
+										age: 27,
+										location: '127.2234562, 127.123456',
+										gender: 'male',
+										income: '10,000 - 20,000',
+										ideology: 'socialist',
+										religion: 'agnostic',
+										vote: "Yes",
+										date: '2012-04-26T22:00:00+10:00'
+						            }, 
+						            {
+							            user: "Jeff Barber",
+										age: 22,
+										location: '127.2234562, 127.123456',
+										gender: 'male',
+										income: '10,000 - 20,000',
+										ideology: 'socialist',
+										religion: 'athiest',
+										vote: "Yes",
+										date: '2012-04-27T21:00:00+10:00'
+						            }, 
+						            {
+							            user: "Tammy Cuskelly",
+										age: 11,
+										location: '127.2234562, 127.123456',
+										gender: 'female',
+										income: '12,000 - 30,000',
+										ideology: 'communist',
+										religion: 'buddist',
+										vote: "Yes",
+										date: '2012-04-28T13:00:00+10:00'
+						            },
+						            {
+							            user: "Bridgette Random",
+										age: 63,
+										location: '127.2234562, 127.123456',
+										gender: 'female',
+										income: '10,000 - 20,000',
+										ideology: 'liberal',
+										religion: 'christian',
+										vote: "Yes",
+										date: '2012-04-29T01:00:00+10:00'
+									},
+																		{
+										user: "Jim Jones",
+										age: 27,
+										location: '127.2234562, 127.123456',
+										gender: 'male',
+										income: '10,000 - 20,000',
+										ideology: 'socialist',
+										religion: 'agnostic',
+										vote: "Yes",
+										date: '2012-04-26T15:00:00+10:00'
+						            }, 
+						            {
+							            user: "Jeff Barber",
+										age: 22,
+										location: '127.2234562, 127.123456',
+										gender: 'male',
+										income: '10,000 - 20,000',
+										ideology: 'socialist',
+										religion: 'athiest',
+										vote: "Yes",
+										date: '2012-04-27T17:00:00+10:00'
+						            }, 
+						            {
+							            user: "Tammy Cuskelly",
+										age: 11,
+										location: '127.2234562, 127.123456',
+										gender: 'female',
+										income: '12,000 - 30,000',
+										ideology: 'communist',
+										religion: 'buddist',
+										vote: "Yes",
+										date: '2012-05-01T13:00:00+10:00'
+						            },
+						            {
+							            user: "Bridgette Random",
+										age: 63,
+										location: '127.2234562, 127.123456',
+										gender: 'female',
+										income: '10,000 - 20,000',
+										ideology: 'liberal',
+										religion: 'christian',
+										vote: "Yes",
+										date: '2012-05-01T01:00:00+10:00'
 									}
+
 					            ],
 					    comments: [
 									{
@@ -63,7 +152,7 @@
 										user: "Jim Jones",
 										vote: "Yes",
 										comment: "Peer-reviewed paper published 1in the journal ü Human Reproduction.",
-										date: '2012-04-23T18:25:43.511Z',
+										date: '2012-04-23T18:25:43.511+10:00',
 										level: 0,
 										tier: 1,
 										sources: [ 34567845, 7564576 ],
@@ -83,7 +172,7 @@
 												user: "John Jones",
 												vote: "No",
 												comment: "Yes, English works exactly that way and the comma does change the meaning. “reads as if it was the first time a child was ever born form a frozen ovary” OP’s title does read that way, but according to the article that’s not the case. The title should say “World’s first baby born from frozen ovary collected during the mother’s childhood”.",
-												date: '2012-04-23T18:25:43.511Z',
+												date: '2012-04-23T18:25:43.511+10:00',
 												level: 0,
 												tier: 3,
 												sources: [ 34567845, 7564576 ],
@@ -93,7 +182,7 @@
 													user: "Another User",
 													vote: "No",
 													comment: "that was what I was trying to ask, thanks for the answer!",
-													date: '2012-04-23T18:25:43.511Z',
+													date: '2012-04-23T18:25:43.511+10:00',
 													level: 0,
 													tier: 4,
 													sources: [ 34567845, 7564576 ],
@@ -103,7 +192,7 @@
 															user: "Another User",
 															vote: "No",
 															comment: "That's great thanks!",
-															date: '2012-04-23T18:25:43.511Z',
+															date: '2012-04-23T18:25:43.511+10:00',
 															level: 0,
 															tier: 5,
 															sources: [ 34567845, 7564576 ]
@@ -119,7 +208,7 @@
 											user: "Different User",
 											vote: "No",
 											comment: "Level up! <br> English +1 Gratz!",
-											date: '2012-04-23T18:25:43.511Z',
+											date: '2012-04-23T18:25:43.511+10:00',
 											level: 0,
 											tier: 2,
 											sources: [ 34567845, 7564576 ]
@@ -131,7 +220,7 @@
 										user: "Tony Roberts",
 										vote: "Yes",
 										comment: "Absolutely! You’re welcome.",
-										date: '2012-04-23T18:25:43.511Z',
+										date: '2012-04-23T18:25:43.511+10:00',
 										level: 0,
 										tier: 1,
 										sources: [ 34567845, 7564576 ],
@@ -141,7 +230,7 @@
 											user: "Tammy Bob",
 											vote: "No",
 											comment: "Just wondering, how would this look in German? And would it be as simple as just removing the comma to change the meaning of the sentence, or would you have to change some of the words too?",
-											date: '2012-04-23T18:25:43.511Z',
+											date: '2012-04-23T18:25:43.511+10:00',
 											level: 0,
 											tier: 2,
 											sources: [ 34567845, 7564576 ],
@@ -152,7 +241,7 @@
 											user: "Bob Sullivan",
 											vote: "No",
 											comment: "He should have just rewritten it.",
-											date: '2012-04-23T18:25:43.511Z',
+											date: '2012-04-23T18:25:43.511+10:00',
 											level: 0,
 											tier: 2,
 											sources: [ 34567845, 7564576 ]

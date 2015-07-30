@@ -125,6 +125,11 @@ $tabletGrid: new-breakpoint(max-width 992px 12);
 .col-11 { @include span-columns(11); @include media($mobileGrid) { @include span-columns(12); } }
 .col-12 { @include span-columns(12); @include media($mobileGrid) { @include span-columns(12); } }
 
+/////////////// LAYOUT ///////////////
+
+.ui-view { padding-top: 50px; }
+.content { padding-top: 50px; }
+
 /////////////// IMAGES ///////////////
 
 .logo { height: 20px; }
@@ -163,9 +168,9 @@ p { margin-bottom: $globalMargin;}
 
 /////////////// DYNAMIC COLOURS ///////////////
 
-.Yes-Background { fill: $colour1; }
-.No-Background { fill: $colour2; }
-.Nuetral-Background { fill: $neutral; }
+.Yes-Background { fill: $colour1; background-color:$colour1; }
+.No-Background { fill: $colour2; background-color:$colour2; }
+.Nuetral-Background { fill: $neutral; background-color:$neutral; }
 
 /////////////// CANVASS ///////////////
 
@@ -221,7 +226,83 @@ hr { margin-bottom: 0; }
 
 /////////////// BOOTSTRAP OVERIDES ///////////////
 
-.navbar { @include border-radius(0); border-bottom: 0;}
+.navbar { @include border-radius(0); border: 0; margin-bottom: 0px; background-color:#f1f1f1;}
+
+/////////////// VOTE PLOT ///////////////
+
+.vote-plot {
+	overflow-y: auto;
+	overflow-x: hidden;
+	position: relative;
+	.days { 
+		position: relative; float: left; border-left: 2px solid white; background-color: #f9f9f9; height: $votePlotHeight;
+		&:first-child { border-left: 0px; }
+		.label { position: absolute; bottom: 3px; left: 2px; color: #a0a0a0; }
+	}
+	.votes {
+		cursor: pointer;
+		position:absolute;
+		width: 10px;
+		height: 10px;
+		z-index: 3;
+		top:( ($votePlotHeight / 2 ) - 5);
+		transform: translateX(-4px);
+		@include border-radius(50%);
+		.popup {
+			transition: opacity 0.2s linear, color 0.2s linear; 
+			opacity: 0;
+		    background-color: #646464;
+		    color: white;
+		    width: 100px;
+		    text-align: center;
+		    padding: 10px;
+		    font-size: 11px;
+		    top: 19px;
+		    position: absolute;
+			transform: translateX(-45px);
+		    border-radius: 3px;
+		    &:after {
+			    position: absolute;
+				content: '';
+				border-left: 8px solid transparent;
+				border-right: 8px solid transparent;
+				border-bottom: 8px solid #646464;
+				margin: 0 auto;
+				width: 10px;
+				top: -4px;
+				left: 0;
+				right: 0;
+		    }
+		}
+		&:hover .popup { opacity: 1; }
+	}
+	.division {
+		position:absolute;
+		margin-top:( ($votePlotHeight / 2 )  - 1 );
+		height: 1px;
+		width: 100%;
+		z-index: 2;
+		background-color:#cecece;	
+	}
+	.yes-bar {
+		position:absolute;
+		margin-top: 10px;
+		height: 75px;
+		width: 100%;
+		opacity: 0.1;
+		z-index: 1;
+		background-color:$colour1;	
+	}
+	.no-bar {
+		position:absolute;
+		margin-top:( ($votePlotHeight / 2 )  - 1 );
+		height: 50px;
+		width: 100%;
+		opacity: 0.1;
+		z-index: 1;
+		background-color:$colour2;	
+	}
+}
 
 
 
