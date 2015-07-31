@@ -42,7 +42,7 @@
 										income: '12,000 - 30,000',
 										ideology: 'communist',
 										religion: 'buddist',
-										vote: "Yes",
+										vote: "No",
 										date: '2012-04-24T00:00:00+10:00'
 						            },
 						            {
@@ -64,7 +64,7 @@
 										income: '10,000 - 20,000',
 										ideology: 'socialist',
 										religion: 'agnostic',
-										vote: "Yes",
+										vote: "No",
 										date: '2012-04-26T22:00:00+10:00'
 						            }, 
 						            {
@@ -75,7 +75,7 @@
 										income: '10,000 - 20,000',
 										ideology: 'socialist',
 										religion: 'athiest',
-										vote: "Yes",
+										vote: "No",
 										date: '2012-04-27T21:00:00+10:00'
 						            }, 
 						            {
@@ -97,7 +97,7 @@
 										income: '10,000 - 20,000',
 										ideology: 'liberal',
 										religion: 'christian',
-										vote: "Yes",
+										vote: "No",
 										date: '2012-04-29T01:00:00+10:00'
 									},
 																		{

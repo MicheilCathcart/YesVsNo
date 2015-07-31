@@ -226,7 +226,7 @@ hr { margin-bottom: 0; }
 
 /////////////// BOOTSTRAP OVERIDES ///////////////
 
-.navbar { @include border-radius(0); border: 0; margin-bottom: 0px; background-color:#f1f1f1;}
+.navbar { @include border-radius(0); border: 0; margin-bottom: 0px; background-color:#EFEFEF;}
 
 /////////////// VOTE PLOT ///////////////
 
@@ -235,7 +235,7 @@ hr { margin-bottom: 0; }
 	overflow-x: hidden;
 	position: relative;
 	.days { 
-		position: relative; float: left; border-left: 2px solid white; background-color: #f9f9f9; height: $votePlotHeight;
+		position: relative; float: left; border-left: 2px solid white; background-color: #f7f7f7; height: $votePlotHeight;
 		&:first-child { border-left: 0px; }
 		.label { position: absolute; bottom: 3px; left: 2px; color: #a0a0a0; }
 	}
