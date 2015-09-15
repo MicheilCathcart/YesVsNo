@@ -106,7 +106,7 @@
 										location: '127.2234562, 127.123456',
 										gender: 'male',
 										income: '10,000 - 20,000',
-										ideology: 'socialist',
+										ideology: 'communist',
 										religion: 'agnostic',
 										vote: "Yes",
 										date: '2012-04-26T15:00:00+10:00'
