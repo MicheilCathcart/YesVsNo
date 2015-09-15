@@ -21,6 +21,7 @@
 			  return new Date(a.date) - new Date(b.date);
 			});
 			
+			
 			// Get the First and Last Votes
 			
 			$scope.firstVote = moment($scope.votes[0].date).hour(0).minute(0).second(0);
