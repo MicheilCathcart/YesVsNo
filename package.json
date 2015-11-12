@@ -1,18 +1,17 @@
 {
-  "name": "YesVsNo",
-  "version": "0.0.0",
-  "private": true,
+  "name": "yesvsno",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "body-parser": "~1.13.2",
-    "cookie-parser": "~1.3.5",
-    "debug": "~2.2.0",
-    "ejs": "~2.3.3",
-    "express": "~4.13.1",
-    "mongoose": "^4.2.3",
-    "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-nodemon": "^2.0.4",
+    "pg": "^4.4.3"
   }
 }

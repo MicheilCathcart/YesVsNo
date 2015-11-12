@@ -1,60 +1,61 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+// Get the dependencies
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var express = require('express'),
+	pg = require('pg'),
+	path = require('path');
 
+// Connect to the database
+var connectionString = "pg://localhost:5432/yesvsno",
+	client = new pg.Client(connectionString); 
+
+client.connect();
+
+// New instance of Express
 var app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+// Choose a port from the environment or default to 3000; 
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+var port = process.env.PORT || 3000; 
 
-app.use('/', routes);
-app.use('/users', users);
+// Express is listening on port 3000
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
+app.listen(port, function() {
+	console.log('Yes vs no is running on PORT' + port);
+})
 
-// error handlers
+// Routes
 
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
-}
+var router = express.Router();
 
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
-});
+// Set the API address
+	
+app.use('/api', router);
 
+// GET /style.css etc
+app.use(express.static(__dirname + '/public'));
 
-module.exports = app;
+// The root of the site, get the index.html file for the angular app 
+
+console.log(path.join(__dirname + '/public/index.html'));
+
+app.get('/', function(req, res){
+        
+	res.sendFile(path.join(__dirname + '/public/index.html'));
+})
+
+// Some Comments
+
+router.route('/comments')
+	.get(function(req, res) {
+		
+        var query = client.query("SELECT id, comment_date, comment_user, comment, level, comment_parent_id FROM comments ORDER BY id");
+        
+        query.on("row", function (row, result) {
+            result.addRow(row);
+        })
+        
+        query.on("end", function (result) {
+            res.json(result.rows, null, "    ");
+        })
+
+})

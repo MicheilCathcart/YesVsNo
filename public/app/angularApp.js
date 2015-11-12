@@ -30,6 +30,10 @@ app.config([
 				url:'/canvass/{id}',
 				templateUrl:'app/canvass/canvass.html',
 				controller: 'canvass'
+			}).state('database', {
+				url:'/database',
+				templateUrl:'app/database/database.html',
+				controller: 'database'
 			});
 			
 			$urlRouterProvider.otherwise('home');
