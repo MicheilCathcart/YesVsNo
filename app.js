@@ -10,7 +10,11 @@ var express = require('express'),
 var connectionString = "pg://localhost:5432/yesvsno",
 	client = new pg.Client(connectionString); 
 
-client.connect();
+client.connect(function(err) {
+  if(err) {
+    return console.error('could not connect to postgres', err);
+  }
+});
 
 // New instance of Express
 
