@@ -1,10 +1,10 @@
 ﻿<div class="comment {{ comment.vote }}"  ng-click="replyVisible == false ? commentMenuVisible = ! commentMenuVisible : commentMenuVisible = false;">
 		
-	<div class="commentWrap" style="padding-left:{{ comment.tier * 40 }}px">
+	<div class="commentWrap" style="padding-left:{{ (comment.tier - 1) * 32 }}px">
 		
 		<div class="commentTitle">
 			<div class="user pull-left">
-				{{ comment.comment_user }}
+				{{ comment.user }}
 			</div>
 			<div class="level pull-right">
 				{{ comment.level | level }}{{ comment.level }}
@@ -30,6 +30,8 @@
 		</form>
 		
 	</div>
+	
+	<div class="comment-border" style="margin-left:{{ (comment.tier - 1) * 32 }}px"></div>
 			
 	<div ng-show="commentMenuVisible" class="comment-menu">
 		<div class="button" ng-click="replyVisible = true; commentMenuVisible = false;">

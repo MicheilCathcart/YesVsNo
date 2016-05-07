@@ -1,5 +1,6 @@
 ﻿<div class="vote-plot">
 	
+	<!--
 	<div class="days" style="width:{{ 100 / ( days.length -1 ) }}%;" ng-repeat="day in days" ng-if="$index < days.length -1">
 		<div class="label" ng-if="$index == 0">
 			{{ day | date:"MMM yyyy"}}
@@ -8,14 +9,11 @@
 			<span ng-if="!returnDayOfMonth(day)">{{ day | date:"d"}}<sup>{{ day | dateSuffix }}</sup></span>
 			<span ng-if="returnDayOfMonth(day)">{{ day | date:"MMM yyyy"}}</span>
 		</div>
-	</div>
+	</div>-->
 	
 	<div class="yes-bar" style="height:{{ findPercentage(highestPosition,lowestPosition) * 110 }}px; margin-top:{{ 125 - (findPercentage(highestPosition,lowestPosition) * 110) }}px;"></div>
 	<div class="division"></div>
 	<div class="no-bar" style="height:{{ findPercentage(lowestPosition,highestPosition) * 110  }}px;">
-		<div class="popup">
-			<div>{{ findPercentage(lowestPosition,highestPosition) }}%</div>
-		</div>
 	</div>
 	
 	<div class="votes {{ vote.vote }}-Background" ng-repeat="vote in votes" style="font-size: 8px; left:{{ scaleX(returnDate(vote.date)); }}%; 

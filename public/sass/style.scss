@@ -36,8 +36,14 @@ html {
 
 body {
     margin: 0;
-    font-size: 16px;
-    cursor: default; 
+    font-size: 14px;
+    cursor: default;
+	-webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;   
   } 
 
 h1, h2, h3, h4, h5, h6, p, blockquote, figure, ol, ul {
@@ -76,6 +82,16 @@ iframe {
 svg {
 	display:block;
 }
+
+/////////////// HELPER CLASSES ///////////////
+
+.pull-left { float: left;}
+.pull-right { float: right; }
+.clearfix { clear: both; }
+
+.left { text-align: left; }
+.center { text-align: center; }
+.right { text-align: right; }
 
 /////////////// FONTS ///////////////
 
@@ -127,7 +143,29 @@ $tabletGrid: new-breakpoint(max-width 992px 12);
 
 /////////////// LAYOUT ///////////////
 
-.ui-view { padding-top: 50px; }
+body {
+	background-color: $bodyBackground;
+}
+
+.app-wrapper {
+	margin: 0 auto;
+	width: 1280px;
+}
+
+ .menu-view {
+	 min-height: 100vh;
+	 width: 33.33333%;
+	 float: left;
+	 background-color: $menuBackground;
+ }
+
+.canvass-view { 
+	min-height: 100vh;
+	width: 66.666666%;
+	float: left;
+	background-color: $canvassBackground;
+ }
+ 
 .content { padding-top: 50px; }
 
 /////////////// IMAGES ///////////////
@@ -136,9 +174,13 @@ $tabletGrid: new-breakpoint(max-width 992px 12);
 
 /////////////// TEXT ///////////////
 
-body { font-family: 'brandon_grotesquelight', serif; }
+body { font-family: 'brandon_grotesquelight', serif; color: $fontColour; }
 
 p { margin-bottom: $globalMargin;}
+
+h1 {
+	font-weight: 200;
+}
 
 /////////////// MARGINS ///////////////
 
@@ -174,6 +216,12 @@ p { margin-bottom: $globalMargin;}
 
 /////////////// CANVASS ///////////////
 
+.canvass {
+	.content {
+		padding: 0px 77px;
+	}
+}
+
 .comment { 
 	&.Yes {
 		.user { color: $colour1; }
@@ -192,9 +240,10 @@ p { margin-bottom: $globalMargin;}
 	}
 }
 
-.commentWrap { border-bottom: 1px solid #eee; padding-bottom: $globalMargin; padding-top: $globalMargin; padding-right: 40px; text-align: justify; } 
-.commentWrap:hover { background-color: #fbfbfb; cursor: pointer; } 
-.commentTitle { margin-bottom: 2px; }
+.commentWrap { //border-bottom: 1px solid $commentBorder; 
+padding-bottom: $globalMargin; padding-top: $globalMargin; padding-right: 40px; } 
+.commentWrap:hover { cursor: pointer; } 
+.commentTitle { margin-bottom: 5px; }
 .replyArea { margin-top: 15px; }
 
 /////////////// COMMENT MENU ///////////////
@@ -221,7 +270,9 @@ p { margin-bottom: $globalMargin;}
 	}
 } 
 
-hr { margin-bottom: 0; }
+.comment-border {
+	border-bottom: 1px solid $commentBorder;
+}
 
 
 /////////////// BOOTSTRAP OVERIDES ///////////////
@@ -231,11 +282,12 @@ hr { margin-bottom: 0; }
 /////////////// VOTE PLOT ///////////////
 
 .vote-plot {
-	overflow-y: auto;
 	overflow-x: hidden;
+	width: 100%;
+	height: 250px;
 	position: relative;
 	.days { 
-		position: relative; float: left; border-left: 2px solid white; background-color: #f7f7f7; height: $votePlotHeight;
+		position: relative; float: left; border-left: 2px solid white; background-color: $canvassBackground; height: $votePlotHeight;
 		&:first-child { border-left: 0px; }
 		.label { position: absolute; bottom: 3px; left: 2px; color: #a0a0a0; }
 	}
@@ -251,8 +303,8 @@ hr { margin-bottom: 0; }
 		.popup {
 			transition: opacity 0.2s linear, color 0.2s linear; 
 			opacity: 0;
-		    background-color: #646464;
-		    color: white;
+		    background-color: $menuBackground;
+		    color: $fontColour;
 		    width: 100px;
 		    text-align: center;
 		    padding: 10px;
@@ -267,7 +319,7 @@ hr { margin-bottom: 0; }
 				content: '';
 				border-left: 8px solid transparent;
 				border-right: 8px solid transparent;
-				border-bottom: 8px solid #646464;
+				border-bottom: 8px solid $menuBackground;
 				margin: 0 auto;
 				width: 10px;
 				top: -4px;
@@ -283,7 +335,7 @@ hr { margin-bottom: 0; }
 		height: 1px;
 		width: 100%;
 		z-index: 2;
-		background-color:#cecece;	
+		background-color: $votePlotZeroLine;	
 	}
 	.yes-bar {
 		position:absolute;

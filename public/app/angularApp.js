@@ -8,7 +8,7 @@ var app = angular.module('yvn', [
 	'ui.router'
 ]);
 
-// Dependencies
+// Modules
 
 angular.module('yvn.home', []);
 angular.module('yvn.canvass', []);

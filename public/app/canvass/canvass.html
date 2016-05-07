@@ -1,33 +1,26 @@
-﻿<vote-plot votes="votes"></vote-plot>
+﻿<div class="canvass">
 
-<div class="container content">
-	
-	<div class="margin">
-		<div class="title pull-left">
+	<vote-plot votes="votes"></vote-plot>
+
+	<div class="content">
+		
+		<div class="title">
 			<h1>{{ title }} </h1>
 		</div>
+		
+		<comment comment="comment" user-vote="userVote" ng-repeat="comment in comments | orderBy:'-level'">
+		
+		</comment>
+		
+		<!--
+		
 		<div class="vote-toggle pull-right">
-			<div class="yes-button {{ userVote }}" ng-click="userVote = 'Yes'">Yes</div>
-			<div class="no-button {{ userVote }}" ng-click="userVote = 'No'">No</div>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-	
-	<form ng-submit="addComment()">
-
-		<div class="form-group">
-			<textarea class="form-control" rows="4" placeholder="Comment" ng-model="userComment"></textarea>
+				<div class="yes-button {{ userVote }}" ng-click="userVote = 'Yes'">Yes</div>
+				<div class="no-button {{ userVote }}" ng-click="userVote = 'No'">No</div>
 		</div>
 		
-		<div class="form-group">
-			<button type="submit" class="btn btn-default">Add Comment</button>
-		</div>
-	</form>
-	
-	<hr class="">
-	
-	<comment comment="comment" user-vote="userVote" ng-repeat="comment in comments | orderBy:'-level'">
-	
-	</comment>
+		-->
+
+	</div>
 
 </div>
