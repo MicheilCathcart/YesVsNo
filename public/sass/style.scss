@@ -25,6 +25,17 @@
     zoom: 1;
 }
 
+@mixin vertical-align() {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+}
+
+
 /////////////// RESET ///////////////
 
 html {
@@ -32,9 +43,11 @@ html {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+	height: 100%;
 }
 
 body {
+	overflow-y: scroll;
     margin: 0;
     font-size: 14px;
     cursor: default;
@@ -44,6 +57,7 @@ body {
   -moz-user-select: none;      /* Firefox */
   -ms-user-select: none;       /* Internet Explorer/Edge */
   user-select: none;   
+  min-height: 100%;
   } 
 
 h1, h2, h3, h4, h5, h6, p, blockquote, figure, ol, ul {
@@ -150,19 +164,21 @@ body {
 .app-wrapper {
 	margin: 0 auto;
 	width: 1280px;
+	height: 100%;
 }
 
  .menu-view {
+	 height: 100%;
 	 min-height: 100vh;
-	 width: 33.33333%;
-	 float: left;
+	 width: 426px;
+	 position: fixed;
 	 background-color: $menuBackground;
  }
 
 .canvass-view { 
 	min-height: 100vh;
-	width: 66.666666%;
-	float: left;
+	width: 854px;
+	margin-left:426px;
 	background-color: $canvassBackground;
  }
  
@@ -249,23 +265,23 @@ padding-bottom: $globalMargin; padding-top: $globalMargin; padding-right: 40px; 
 /////////////// COMMENT MENU ///////////////
 
 .comment-menu {
-	border-bottom: 1px solid #eee;
+	width:207px;
+	margin:0 auto;
 	@include clearfix();
-	.button {
-		float:left;
-		width: 33.33333333333333%;
-		padding: 12px 0px;
-		border-right: 1px solid #eee;
+	.circle-button {
 		cursor: pointer;
-		&.arrow { padding: 15px 0px 16px 0px; }
+		width: 53px;
+		height: 53px;
+		background-color: #242424;
+		border-radius: 50%;
+		float: left;
+		margin-right: 16px;
+		margin-bottom: 20px;
 		svg {
 			margin: 0 auto;
-			opacity: 0.3;
+			@include vertical-align();
 		}
-		&:last-child { border-right: none; }
 		&:hover { 
-			background-color: #fbfbfb;
-			svg { opacity: 1; }
 		}
 	}
 } 

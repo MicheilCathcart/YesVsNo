@@ -20,7 +20,7 @@
 			$scope.votes.sort(function(a,b){
 			  return new Date(a.date) - new Date(b.date);
 			});
-			
+		
 			
 			// Get the First and Last Votes
 			

@@ -97,6 +97,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/public\/app\/canvass\/directives\/min\/vote-plot-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/public\/app\/canvass\/directives\/min\/vote-plot-min.js",
+		"outputAbbreviatedPath": "\/public\/app\/canvass\/directives\/min\/min\/vote-plot-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/public\/app\/canvass\/directives\/vote-plot.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -253,6 +264,17 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1
+		},
+	"\/public\/images\/up-arrow.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 305,
+		"inputAbbreviatedPath": "\/public\/images\/up-arrow.png",
+		"outputAbbreviatedPath": "\/public\/images\/up-arrow.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/public\/images\/YN Logo.png": {
 		"fileType": 32768,
