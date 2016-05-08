@@ -233,12 +233,16 @@ h1 {
 /////////////// CANVASS ///////////////
 
 .canvass {
+	overflow: hidden;
 	.content {
 		padding: 0px 77px;
 	}
 }
 
+/////////////// COMMENT  ///////////////
+
 .comment { 
+	position: relative;
 	&.Yes {
 		.user { color: $colour1; }
 		.level { color: $colour1; }
@@ -256,11 +260,27 @@ h1 {
 	}
 }
 
-.commentWrap { //border-bottom: 1px solid $commentBorder; 
-padding-bottom: $globalMargin; padding-top: $globalMargin; padding-right: 40px; } 
+.commentWrap { 
+	background-color: $canvassBackground;
+	padding-bottom: $globalMargin; 
+	padding-top: $globalMargin; 
+	padding-right: 40px; 
+} 
+
 .commentWrap:hover { cursor: pointer; } 
 .commentTitle { margin-bottom: 5px; }
 .replyArea { margin-top: 15px; }
+
+.comment-border {
+	border-bottom: 1px solid $commentBorder;
+}
+
+.comment-border-left {
+	position: absolute;
+	height: 100vh;
+	top:0;
+	border-left: 1px dashed $menuBackground;
+}
 
 /////////////// COMMENT MENU ///////////////
 
@@ -286,9 +306,7 @@ padding-bottom: $globalMargin; padding-top: $globalMargin; padding-right: 40px; 
 	}
 } 
 
-.comment-border {
-	border-bottom: 1px solid $commentBorder;
-}
+
 
 
 /////////////// BOOTSTRAP OVERIDES ///////////////

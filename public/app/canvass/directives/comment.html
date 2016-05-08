@@ -1,6 +1,6 @@
 ﻿<div class="comment {{ comment.vote }}"  ng-click="replyVisible == false ? commentMenuVisible = ! commentMenuVisible : commentMenuVisible = false;">
 		
-	<div class="commentWrap" style="padding-left:{{ (comment.tier - 1) * 32 }}px">
+	<div class="commentWrap" style="margin-left:{{ (comment.tier - 1) * 32 }}px">
 		
 		<div class="commentTitle">
 			<div class="user pull-left">
@@ -50,6 +50,7 @@
 	</div>
 	
 	<div class="comment-border" style="margin-left:{{ (comment.tier - 1) * 32 }}px"></div>
+	<div ng-if="comment.tier > 1" class="comment-border-left" style="left:{{ (comment.tier - 2) * 32 }}px"></div>
 				
 </div>
 			

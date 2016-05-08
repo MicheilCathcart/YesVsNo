@@ -372,29 +372,34 @@ h1 {
   fill: #aaaaaa;
   background-color: #aaaaaa; }
 
-.canvass .content {
-  padding: 0px 77px; }
+.canvass {
+  overflow: hidden; }
+  .canvass .content {
+    padding: 0px 77px; }
 
-.comment.Yes .user {
-  color: #007985; }
-.comment.Yes .level {
-  color: #007985; }
-.comment.Yes .vote-colour {
-  fill: #007985; }
-.comment.No .user {
-  color: #922857; }
-.comment.No .level {
-  color: #922857; }
-.comment.No .vote-colour {
-  fill: #922857; }
-.comment.Neutral .user {
-  color: #aaaaaa; }
-.comment.Neutral .level {
-  color: #aaaaaa; }
-.comment.Neutral .vote-colour {
-  fill: #aaaaaa; }
+.comment {
+  position: relative; }
+  .comment.Yes .user {
+    color: #007985; }
+  .comment.Yes .level {
+    color: #007985; }
+  .comment.Yes .vote-colour {
+    fill: #007985; }
+  .comment.No .user {
+    color: #922857; }
+  .comment.No .level {
+    color: #922857; }
+  .comment.No .vote-colour {
+    fill: #922857; }
+  .comment.Neutral .user {
+    color: #aaaaaa; }
+  .comment.Neutral .level {
+    color: #aaaaaa; }
+  .comment.Neutral .vote-colour {
+    fill: #aaaaaa; }
 
 .commentWrap {
+  background-color: #1E1E1E;
   padding-bottom: 20px;
   padding-top: 20px;
   padding-right: 40px; }
@@ -407,6 +412,15 @@ h1 {
 
 .replyArea {
   margin-top: 15px; }
+
+.comment-border {
+  border-bottom: 1px solid #3C3C3C; }
+
+.comment-border-left {
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  border-left: 1px dashed #222222; }
 
 .comment-menu {
   width: 207px;
@@ -431,9 +445,6 @@ h1 {
       -webkit-transform: translateY(-50%);
       -moz-transform: translateY(-50%);
       -o-transform: translateY(-50%); }
-
-.comment-border {
-  border-bottom: 1px solid #3C3C3C; }
 
 .navbar {
   -moz-border-radius: 0;
