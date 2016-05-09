@@ -60,7 +60,7 @@ app.get('/', function(req, res){
 router.route('/comments')
 	.get(function(req, res) {
 		
-                var query = client.query("SELECT id, comment_date, comment_user, comment, level, tier, comment_parent_id FROM comments ORDER BY id");
+                var query = client.query("SELECT * FROM comments ORDER BY level");
                 
                 query.on("row", function (row, result) {
                 result.addRow(row);

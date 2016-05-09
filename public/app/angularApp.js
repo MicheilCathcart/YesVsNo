@@ -27,7 +27,7 @@ app.config([
 				controller: 'home'
 			})
 			.state('canvass', {
-				url:'/canvass/{id}',
+				url:'/canvass',
 				templateUrl:'app/canvass/canvass.html',
 				controller: 'canvass'
 			}).state('database', {
@@ -36,7 +36,7 @@ app.config([
 				controller: 'database'
 			});
 			
-			$urlRouterProvider.otherwise('home');
+			$urlRouterProvider.otherwise('canvass');
 
 	}
 ])

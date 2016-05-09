@@ -379,23 +379,23 @@ h1 {
 
 .comment {
   position: relative; }
-  .comment.Yes .user {
+  .comment.One .user {
     color: #007985; }
-  .comment.Yes .level {
+  .comment.One .level {
     color: #007985; }
-  .comment.Yes .vote-colour {
+  .comment.One .vote-colour {
     fill: #007985; }
-  .comment.No .user {
+  .comment.Two .user {
     color: #922857; }
-  .comment.No .level {
+  .comment.Two .level {
     color: #922857; }
-  .comment.No .vote-colour {
+  .comment.Two .vote-colour {
     fill: #922857; }
-  .comment.Neutral .user {
+  .comment.Zero .user {
     color: #aaaaaa; }
-  .comment.Neutral .level {
+  .comment.Zero .level {
     color: #aaaaaa; }
-  .comment.Neutral .vote-colour {
+  .comment.Zero .vote-colour {
     fill: #aaaaaa; }
 
 .commentWrap {

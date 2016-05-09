@@ -1,0 +1,1 @@
+!function(){var n=angular.module("yvn.canvass");n.factory("getComments",["$http",function(n){return{comments:function(){return n({url:"/api/comments",method:"GET"})}}}])}();

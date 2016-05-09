@@ -14,6 +14,141 @@
 		
 		function controller ($scope, $element) {
 
+			// Dummy Data
+			
+			$scope.votes = [ 
+				{
+					user: "Jim Jones",
+					age: 27,
+					location: '127.2234562, 127.123456',
+					gender: 'male',
+					income: '10,000 - 20,000',
+					ideology: 'socialist',
+					religion: 'agnostic',
+					vote: "No",
+					date: '2012-04-22T12:00:00+10:00'
+				}, 
+				{
+					user: "Jeff Barber",
+					age: 22,
+					location: '127.2234562, 127.123456',
+					gender: 'male',
+					income: '10,000 - 20,000',
+					ideology: 'socialist',
+					religion: 'athiest',
+					vote: "Yes",
+					date: '2012-04-23T09:00:00+10:00'
+				}, 
+				{
+					user: "Tammy Cuskelly",
+					age: 11,
+					location: '127.2234562, 127.123456',
+					gender: 'female',
+					income: '12,000 - 30,000',
+					ideology: 'communist',
+					religion: 'buddist',
+					vote: "No",
+					date: '2012-04-24T00:00:00+10:00'
+				},
+				{
+					user: "Bridgette Random",
+					age: 63,
+					location: '127.2234562, 127.123456',
+					gender: 'female',
+					income: '10,000 - 20,000',
+					ideology: 'liberal',
+					religion: 'christian',
+					vote: "No",
+					date: '2012-04-25T23:00:00+10:00'
+				},
+				{
+					user: "Jim Jones",
+					age: 27,
+					location: '127.2234562, 127.123456',
+					gender: 'male',
+					income: '10,000 - 20,000',
+					ideology: 'socialist',
+					religion: 'agnostic',
+					vote: "No",
+					date: '2012-04-26T22:00:00+10:00'
+				}, 
+				{
+					user: "Jeff Barber",
+					age: 22,
+					location: '127.2234562, 127.123456',
+					gender: 'male',
+					income: '10,000 - 20,000',
+					ideology: 'socialist',
+					religion: 'athiest',
+					vote: "No",
+					date: '2012-04-27T21:00:00+10:00'
+				}, 
+				{
+					user: "Tammy Cuskelly",
+					age: 11,
+					location: '127.2234562, 127.123456',
+					gender: 'female',
+					income: '12,000 - 30,000',
+					ideology: 'communist',
+					religion: 'buddist',
+					vote: "Yes",
+					date: '2012-04-28T13:00:00+10:00'
+				},
+				{
+					user: "Bridgette Random",
+					age: 63,
+					location: '127.2234562, 127.123456',
+					gender: 'female',
+					income: '10,000 - 20,000',
+					ideology: 'liberal',
+					religion: 'christian',
+					vote: "No",
+					date: '2012-04-29T01:00:00+10:00'
+				},
+													{
+					user: "Jim Jones",
+					age: 27,
+					location: '127.2234562, 127.123456',
+					gender: 'male',
+					income: '10,000 - 20,000',
+					ideology: 'communist',
+					religion: 'agnostic',
+					vote: "Yes",
+					date: '2012-04-26T15:00:00+10:00'
+				}, 
+				{
+					user: "Jeff Barber",
+					age: 22,
+					location: '127.2234562, 127.123456',
+					gender: 'male',
+					income: '10,000 - 20,000',
+					ideology: 'socialist',
+					religion: 'athiest',
+					vote: "Yes",
+					date: '2012-04-27T17:00:00+10:00'
+				}, 
+				{
+					user: "Tammy Cuskelly",
+					age: 11,
+					location: '127.2234562, 127.123456',
+					gender: 'female',
+					income: '12,000 - 30,000',
+					ideology: 'communist',
+					religion: 'buddist',
+					vote: "Yes",
+					date: '2012-05-01T13:00:00+10:00'
+				},
+				{
+					user: "Bridgette Random",
+					age: 63,
+					location: '127.2234562, 127.123456',
+					gender: 'female',
+					income: '10,000 - 20,000',
+					ideology: 'liberal',
+					religion: 'christian',
+					vote: "Yes",
+					date: '2012-05-01T01:00:00+10:00'
+				}];
 			
 			// Sort the Votes by Date
 			

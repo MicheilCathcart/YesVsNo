@@ -24,6 +24,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/min\/app-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/min\/app-min.js",
+		"outputAbbreviatedPath": "\/min\/min\/app-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/package.json": {
 		"fileType": 524288,
 		"ignore": 1,
@@ -128,12 +139,34 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/public\/app\/canvass\/factories\/get-canvass-factory.js": {
+	"\/public\/app\/canvass\/factories\/get-comments-factory.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/public\/app\/canvass\/factories\/get-canvass-factory.js",
-		"outputAbbreviatedPath": "\/public\/app\/canvass\/factories\/min\/get-canvass-factory-min.js",
+		"inputAbbreviatedPath": "\/public\/app\/canvass\/factories\/get-comments-factory.js",
+		"outputAbbreviatedPath": "\/public\/app\/canvass\/factories\/min\/get-comments-factory-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/public\/app\/canvass\/factories\/min\/get-comments-factory-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/public\/app\/canvass\/factories\/min\/get-comments-factory-min.js",
+		"outputAbbreviatedPath": "\/public\/app\/canvass\/factories\/min\/min\/get-comments-factory-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/public\/app\/canvass\/min\/canvass-controller-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/public\/app\/canvass\/min\/canvass-controller-min.js",
+		"outputAbbreviatedPath": "\/public\/app\/canvass\/min\/min\/canvass-controller-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -296,12 +329,23 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/public\/js\/angular.js": {
+	"\/public\/js\/angular1.3.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/public\/js\/angular.js",
-		"outputAbbreviatedPath": "\/public\/js\/min\/angular-min.js",
+		"inputAbbreviatedPath": "\/public\/js\/angular1.3.js",
+		"outputAbbreviatedPath": "\/public\/js\/min\/angular1.3-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/public\/js\/angular1.5.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/public\/js\/angular1.5.js",
+		"outputAbbreviatedPath": "\/public\/js\/min\/angular1.5-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,

@@ -1,10 +1,10 @@
-﻿<div class="comment {{ comment.vote }}"  ng-click="replyVisible == false ? commentMenuVisible = ! commentMenuVisible : commentMenuVisible = false;">
+﻿<div ng-repeat="comment in comments | orderBy:'-level'" class="comment {{ comment.comment_vote }}"  ng-click="toggleCommentMenu(comment)">
 		
 	<div class="commentWrap" style="margin-left:{{ (comment.tier - 1) * 32 }}px">
 		
 		<div class="commentTitle">
 			<div class="user pull-left">
-				{{ comment.user }}
+				{{ comment.comment_user }}
 			</div>
 			<div class="level pull-right">
 				{{ comment.level | level }}{{ comment.level }}
@@ -31,7 +31,7 @@
 		
 	</div>
 	
-	<div ng-show="commentMenuVisible" class="comment-menu">
+	<div ng-show="comment.commentMenuVisible" class="comment-menu">
 		<div class="circle-button" ng-click="replyVisible = true; commentMenuVisible = false;">
 			<svg width="17px" height="14px">
 				 <path d="M12.3064863,12.5171025 C11.1613519,12.963698 9.86844028,13.2150772 8.5,13.2150772 C3.80557963,13.2150772 0,10.2567814 0,6.6075386 C0,2.9582958 3.80557963,0 8.5,0 C13.1944204,0 17,2.9582958 17,6.6075386 C17,8.37744339 16.1048102,9.98481613 14.6471968,11.1709786 L15.1923828,14 L12.3064863,12.5171025 Z" id="Combined-Shape" fill="#808080"></path>
@@ -53,5 +53,3 @@
 	<div ng-if="comment.tier > 1" class="comment-border-left" style="left:{{ (comment.tier - 2) * 32 }}px"></div>
 				
 </div>
-			
-<comment class="replies" comment="comment" user-vote="userVote" ng-repeat="comment in comment.comments | orderBy:'-level'" />

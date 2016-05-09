@@ -2,53 +2,91 @@
 
     var module = angular.module('yvn.canvass');
 
-    module.directive('comment', ['RecursionHelper', function(RecursionHelper) {
+    module.directive('comments', ['getComments', function(getComments) {
 	    
 		return {
 			restrict: 'E',
-			scope: { comment: '=', userVote: '='},
+			scope: {},
 			templateUrl: 'app/canvass/directives/comment.html',
-			compile: function(element) {
+			controller: function($scope) {
 				
-	            return RecursionHelper.compile(element, function(scope, element, attrs, ctrl, transcludeFn) {
-		            
-				// Link Function Defined Here
+					// Create Comment Tree
 				
+					var buildCommentTree = function(data) {
+						
+						// Create a new array of only parent comments
+						
+						var commentTree = _.filter(data, function(o) { return o.comment_parent_id == 0; })
+						
+						// Find the child comments to loop through
+						
+						var childComments = _.filter(data, function(o) { return !o.comment_parent_id == 0; })
 
-	            scope.commentUp = function(comment) {
-		            comment.level +=1; 
-		        } 
-            
-	            scope.commentDown = function(comment) {
-			    	comment.level -=1; 
-	        	} 
-	        	
-	        	scope.replyVisible = false; 
-	        		        	
-	        	scope.addReply = function(comment) {
-	            if(!scope.userComment || scope.userComment === '') { return; }
-	            if (!comment.comments) { comment.comments = []; }
-	            comment.comments.push(
-		            {
-			            id: Math.random(),
-			            user: "michsail", 
-			            comment: scope.userComment,
-						level: 0,
-						tier: comment.tier + 1,
-						vote: scope.userVote,
-						date: new Date()
-			        }
-		        )
-		        		        
-		        scope.userComment = '';
-		        scope.replyVisible = false;
-		        
-            }
+console.log(childComments);
 
-	            });
+						// Loop through and add each comment to the tree array
+						
+						_.each(childComments, function(comment) {
+							console.log('Iteration');
+							var parentID = comment.comment_parent_id;
+							var parent = _.filter(commentTree, function(o) { 
+								return o.comment_id == parentID; 
+							});
+							console.log(parent);
+							parent.comments = [];
+							parent.comments.push(comment);
+						})
+						
+						return commentTree;
+						
+					}
+				
+					// Comment Data
+					
+					$scope.comments = [];
+					
+					var loadComments = function () {
+					
+						getComments.comments().success(function(data){
+							$scope.comments = buildCommentTree(data);
+						})
+
+					}
+					
+					loadComments();
+					
+					$scope.addPostComment = function() {
+						if(!$scope.userComment || $scope.userComment === '') { return; }
+
+						var commentData = {
+							user: $scope.userName, 
+							comment: $scope.userComment,
+							level: 0,
+							tier: 1,
+							vote: $scope.userVote,
+							date: new Date()
+						}
+						
+						$http.post('/api/comments/new', commentData).then(function successCallback(response) {
+							loadComments();
+						}, function errorCallback(response) {
+							console.log('Error In Posting?');
+						});
+					
+						$scope.userComment = '';
+						
+					}
+					
+					$scope.toggleCommentMenu = function(comment) {
+						if ( comment.commentMenuVisible == undefined || comment.commentMenuVisible == false ) {
+							comment.commentMenuVisible = true;
+						} else if ( comment.commentMenuVisible == true ) {
+							comment.commentMenuVisible = false;
+						}
+					}
+
+	            }
         	}
-		}
-    	
-    }]);
+		}]);
   
 })();

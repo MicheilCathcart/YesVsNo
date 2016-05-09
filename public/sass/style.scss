@@ -243,17 +243,17 @@ h1 {
 
 .comment { 
 	position: relative;
-	&.Yes {
+	&.One {
 		.user { color: $colour1; }
 		.level { color: $colour1; }
 		.vote-colour { fill: $colour1; }
 	}
-	&.No {
+	&.Two {
 		.user { color: $colour2; }
 		.level { color: $colour2; }
 		.vote-colour { fill: $colour2; }
 	}
-	&.Neutral {
+	&.Zero {
 		.user { color: $neutral; }
 		.level { color: $neutral; }
 		.vote-colour { fill: $neutral; }
