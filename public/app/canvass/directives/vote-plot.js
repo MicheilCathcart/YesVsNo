@@ -181,12 +181,12 @@
 			$scope.lowestPosition = 0;
 			var maxPosition;
 			
-			_($scope.votes).forEach(function(item) {
+			_.each($scope.votes, function(item) {
 				if ( item.vote == "Yes" ) {  votePosition++; $scope.highestPosition++ }
 				if ( item.vote == "No" ) { votePosition--; $scope.lowestPosition++ }
 				item.votePosition = votePosition;
 				maxPosition = Math.max($scope.lowestPosition, $scope.highestPosition);
-			}).value();
+			});
 			
 			$log.info("High");		
 			$log.info($scope.lowestPosition);

@@ -6,54 +6,60 @@
 	    
 		return {
 			restrict: 'E',
-			scope: {},
+			scope: {
+				data: '=?' 
+			},
 			templateUrl: 'app/canvass/directives/comment.html',
 			controller: function($scope) {
+	
 				
-					// Create Comment Tree
+					// Check whether comments are provided, otherwise load them
+					
+					if (!$scope.data) {
 				
-					var buildCommentTree = function(data) {
-						
-						// Create a new array of only parent comments
-						
-						var commentTree = _.filter(data, function(o) { return o.comment_parent_id == 0; })
-						
-						// Find the child comments to loop through
-						
-						var childComments = _.filter(data, function(o) { return !o.comment_parent_id == 0; })
+						// Create Comment Tree
+					
+						var buildCommentTree = function(data) {
+							
+							var ordered = _.orderBy(data, ['tier'], ['desc'])
 
-console.log(childComments);
-
-						// Loop through and add each comment to the tree array
-						
-						_.each(childComments, function(comment) {
-							console.log('Iteration');
-							var parentID = comment.comment_parent_id;
-							var parent = _.filter(commentTree, function(o) { 
-								return o.comment_id == parentID; 
+							_.each(ordered, function(o) {
+								
+								var parent = _.filter(data, function(a) {
+									return a.comment_id == o.comment_parent_id;
+								})
+								
+								if (parent[0]) {
+									parent[0].comments = [];
+									parent[0].comments.push(o);
+								}
+								
+							})
+							
+							var commentTree = _.filter(data, function(o) {
+									return o.comment_parent_id == 0;
 							});
-							console.log(parent);
-							parent.comments = [];
-							parent.comments.push(comment);
-						})
-						
-						return commentTree;
-						
-					}
-				
-					// Comment Data
-					
-					$scope.comments = [];
-					
-					var loadComments = function () {
-					
-						getComments.comments().success(function(data){
-							$scope.comments = buildCommentTree(data);
-						})
 
-					}
+							return commentTree;
+						}
 					
-					loadComments();
+						// Comment Data
+						
+						$scope.comments = [];
+						
+						var loadComments = function () {
+						
+							getComments.comments().success(function(data){
+								$scope.comments = buildCommentTree(data);
+							});
+
+						}
+						
+						loadComments();
+					
+					} else {
+						$scope.comments = $scope.data;
+					}
 					
 					$scope.addPostComment = function() {
 						if(!$scope.userComment || $scope.userComment === '') { return; }
