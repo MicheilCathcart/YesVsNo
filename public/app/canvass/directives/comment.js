@@ -61,6 +61,8 @@
 						$scope.comments = $scope.data;
 					}
 					
+					// Add Post Comment
+					
 					$scope.addPostComment = function() {
 						if(!$scope.userComment || $scope.userComment === '') { return; }
 
@@ -83,7 +85,10 @@
 						
 					}
 					
+					// Toggle Comment Menu
+					
 					$scope.toggleCommentMenu = function(comment) {
+						console.log(comment);
 						if ( comment.commentMenuVisible == undefined || comment.commentMenuVisible == false ) {
 							comment.commentMenuVisible = true;
 						} else if ( comment.commentMenuVisible == true ) {

@@ -1,6 +1,6 @@
-﻿<div ng-repeat="comment in comments | orderBy:'-level'" class="comment {{ comment.comment_vote }}"  ng-click="toggleCommentMenu(comment)">
+﻿<div ng-repeat="comment in comments | orderBy:'-level'" class="comment {{ comment.comment_vote }}">
 		
-	<div class="commentWrap" style="margin-left:{{ (comment.tier - 1) * 32 }}px">
+	<div class="commentWrap" style="margin-left:{{ (comment.tier - 1) * 32 }}px" ng-click="toggleCommentMenu(comment)">
 		
 		<div class="commentTitle">
 			<div class="user pull-left">
