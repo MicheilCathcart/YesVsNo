@@ -2,9 +2,9 @@
 
     var module = angular.module('yvn.canvass');
 
-    module.controller('canvass', ['$scope', '$stateParams',
+    module.controller('canvass', ['$scope',
     
-        function($scope, $stateParams) {
+        function($scope) {
 
 			// Canvass Data
 

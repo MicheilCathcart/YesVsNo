@@ -81,22 +81,33 @@ router.route('/comments/new')
                 
                 // Grab data from http request
                 var data = {
-                        comment_date: req.body.date, 
-                        comment_user: req.body.user,
+                        canvass_id: req.body.canvass_id,
+                        comment_date: req.body.comment_date, 
+                        comment_user: req.body.comment_user,
                         comment: req.body.comment,
                         level: req.body.level,
                         tier: req.body.tier,
-                        comment_parent_id: 1
+                        comment_parent_id: req.body.comment_parent_id,
+                        comment_vote: req.body.comment_vote
                         };
                         
                 console.log("Data Object");    
                 console.log(req.body);
                 
                 // SQL Query > Insert Data
-                client.query("INSERT INTO comments(comment_date, comment_user, comment, level, tier, comment_parent_id) values($1, $2, $3, $4, $5, $6)", [data.comment_date, data.comment_user, data.comment, data.level, data.tier, data.comment_parent_id]);
+                client.query("INSERT INTO comments(canvass_id, comment_date, comment_user, comment, level, tier, comment_parent_id, comment_vote) values($1, $2, $3, $4, $5, $6, $7, $8)", 
+                [data.canvass_id,
+                data.comment_date, 
+                data.comment_user, 
+                data.comment, 
+                data.level, 
+                data.tier, 
+                data.comment_parent_id,
+                data.comment_vote]
+                );
 
                 // SQL Query > Select Data
-                var query = client.query("SELECT id, comment_date, comment_user, comment, level, tier, comment_parent_id FROM comments ORDER BY id");
+                var query = client.query("SELECT * FROM comments ORDER BY id");
                 
                 // Stream results back one row at a time
                 query.on("row", function (row, result) {
@@ -107,4 +118,4 @@ router.route('/comments/new')
                 query.on("end", function (result) {
                 res.json(result.rows, null, "    ");
                 })
-        })
+        });

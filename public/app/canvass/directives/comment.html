@@ -14,20 +14,7 @@
 				
 		<div class="comment-text">
 		{{ comment.comment }}
-		</div>
-			
-		<form ng-show="replyVisible" ng-submit="addReply(comment)">
-		
-		<div class="form-group">
-			<textarea class="form-control replyArea" rows="4" placeholder="Reply" ng-model="userComment"></textarea>
-		</div>
-		
-		<div class="form-group">
-			<button type="submit" class="btn btn-default">Reply</button>
-			<button type="button" class="btn btn-default" ng-click="replyVisible = false; $event.stopPropagation();">Cancel</button>
-		</div>
-		
-		</form>
+		</div>	
 		
 	</div>
 	
@@ -48,6 +35,12 @@
 			</svg>
 		</div>
 	</div>
+	
+	<form ng-show="replyVisible" ng-submit="addPostComment(comment, userComment)">
+		<textarea class="replyArea" rows="4" placeholder="Reply" ng-model="userComment" />
+		<input type="submit" id="submit" value="Submit" />
+		<input type="button" value="Cancel" ng-click="replyVisible = false; $event.stopPropagation();"/>
+	</form>
 	
 	<div class="comment-border" style="margin-left:{{ (comment.tier - 1) * 32 }}px"></div>
 	<div ng-if="comment.tier > 1" class="comment-border-left" style="left:{{ (comment.tier - 2) * 32 }}px"></div>

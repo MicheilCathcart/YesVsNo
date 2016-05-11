@@ -1,1 +1,1 @@
-!function(){var e=angular.module("yvn.canvass");e.controller("canvass",["$scope","$stateParams",function(e,a){e.canvass_id=101,e.title="Do electric sheep dream?",e.userVote="YES",e.userName="Jessica Jones"}])}();
+!function(){var e=angular.module("yvn.canvass");e.controller("canvass",["$scope",function(e){e.canvass_id=101,e.title="Do electric sheep dream?",e.userVote="YES",e.userName="Jessica Jones"}])}();
