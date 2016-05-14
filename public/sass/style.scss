@@ -190,7 +190,7 @@ body {
 
 /////////////// TEXT ///////////////
 
-body { font-family: 'brandon_grotesquelight', serif; color: $fontColour; }
+body, input, textarea { font-family: 'brandon_grotesquelight', serif; color: $fontColour; }
 
 p { margin-bottom: $globalMargin;}
 
@@ -235,32 +235,34 @@ h1 {
 .canvass {
 	overflow: hidden;
 	.content {
-		padding: 0px 77px;
+		padding: 0px 77px 77px 77px;
 	}
 }
 
 /////////////// COMMENT  ///////////////
 
+@keyframes commentAnimation {
+    0%   { background-color: $canvassBackground; }
+    50%  { background-color: $menuBackground; }
+    100%  { background-color: $canvassBackground; }
+}
+
 .comment { 
+	
 	position: relative;
-	&.One {
-		.user { color: $colour1; }
-		.level { color: $colour1; }
-		.vote-colour { fill: $colour1; }
-	}
-	&.Two {
-		.user { color: $colour2; }
-		.level { color: $colour2; }
-		.vote-colour { fill: $colour2; }
-	}
-	&.Zero {
-		.user { color: $neutral; }
-		.level { color: $neutral; }
-		.vote-colour { fill: $neutral; }
-	}
+		 .user, .level { 
+				&.One {
+					color: $colour1; 
+				}
+				&.Two {
+					color: $colour2; 
+				}
+			 }
 }
 
 .commentWrap { 
+	animation-name: commentAnimation;
+    animation-duration: 0.5s;
 	background-color: $canvassBackground;
 	padding-bottom: $globalMargin; 
 	padding-top: $globalMargin; 
@@ -285,9 +287,12 @@ h1 {
 /////////////// COMMENT MENU ///////////////
 
 .comment-menu {
-	width:207px;
 	margin:0 auto;
 	@include clearfix();
+	.button-wrap {
+		width: 207px;
+		margin: 0 auto;
+	}
 	.circle-button {
 		cursor: pointer;
 		width: 53px;
@@ -304,10 +309,16 @@ h1 {
 		&:hover { 
 		}
 	}
+	.replyArea {
+		margin-bottom: 20px;
+		background-color: #222222;
+		border: 0px;
+		width: 100%;
+		color: white;
+		font-size: 14px;
+		padding: 15px;
+	}
 } 
-
-
-
 
 /////////////// BOOTSTRAP OVERIDES ///////////////
 

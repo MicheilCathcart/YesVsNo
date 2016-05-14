@@ -90,12 +90,9 @@ router.route('/comments/new')
                         comment_parent_id: req.body.comment_parent_id,
                         comment_vote: req.body.comment_vote
                         };
-                        
-                console.log("Data Object");    
-                console.log(req.body);
                 
                 // SQL Query > Insert Data
-                client.query("INSERT INTO comments(canvass_id, comment_date, comment_user, comment, level, tier, comment_parent_id, comment_vote) values($1, $2, $3, $4, $5, $6, $7, $8)", 
+                client.query("INSERT INTO comments(canvass_id, comment_date, comment_user, comment, level, tier, comment_parent_id, comment_vote) values($1, $2, $3, $4, $5, $6, $7, $8) returning *", 
                 [data.canvass_id,
                 data.comment_date, 
                 data.comment_user, 
@@ -103,9 +100,13 @@ router.route('/comments/new')
                 data.level, 
                 data.tier, 
                 data.comment_parent_id,
-                data.comment_vote]
+                data.comment_vote], function(err, result) {
+                        console.log(err);
+                        console.log(result);
+                        res.json(result.rows, null, "    ");
+                }
                 );
-
+                /*
                 // SQL Query > Select Data
                 var query = client.query("SELECT * FROM comments ORDER BY id");
                 
@@ -117,5 +118,5 @@ router.route('/comments/new')
                 // After all data is returned,  return results
                 query.on("end", function (result) {
                 res.json(result.rows, null, "    ");
-                })
+                }) */
         });

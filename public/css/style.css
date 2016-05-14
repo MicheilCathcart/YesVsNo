@@ -320,7 +320,7 @@ body {
 .logo {
   height: 20px; }
 
-body {
+body, input, textarea {
   font-family: 'brandon_grotesquelight', serif;
   color: #ffffff; }
 
@@ -375,30 +375,25 @@ h1 {
 .canvass {
   overflow: hidden; }
   .canvass .content {
-    padding: 0px 77px; }
+    padding: 0px 77px 77px 77px; }
 
+@keyframes commentAnimation {
+  0% {
+    background-color: #1E1E1E; }
+  50% {
+    background-color: #222222; }
+  100% {
+    background-color: #1E1E1E; } }
 .comment {
   position: relative; }
-  .comment.One .user {
+  .comment .user.One, .comment .level.One {
     color: #007985; }
-  .comment.One .level {
-    color: #007985; }
-  .comment.One .vote-colour {
-    fill: #007985; }
-  .comment.Two .user {
+  .comment .user.Two, .comment .level.Two {
     color: #922857; }
-  .comment.Two .level {
-    color: #922857; }
-  .comment.Two .vote-colour {
-    fill: #922857; }
-  .comment.Zero .user {
-    color: #aaaaaa; }
-  .comment.Zero .level {
-    color: #aaaaaa; }
-  .comment.Zero .vote-colour {
-    fill: #aaaaaa; }
 
 .commentWrap {
+  animation-name: commentAnimation;
+  animation-duration: 0.5s;
   background-color: #1E1E1E;
   padding-bottom: 20px;
   padding-top: 20px;
@@ -414,7 +409,7 @@ h1 {
   margin-top: 15px; }
 
 .comment-border {
-  border-bottom: 1px solid #3C3C3C; }
+  border-bottom: 1px solid #292929; }
 
 .comment-border-left {
   position: absolute;
@@ -423,10 +418,12 @@ h1 {
   border-left: 1px dashed #222222; }
 
 .comment-menu {
-  width: 207px;
   margin: 0 auto;
   overflow: auto;
   zoom: 1; }
+  .comment-menu .button-wrap {
+    width: 207px;
+    margin: 0 auto; }
   .comment-menu .circle-button {
     cursor: pointer;
     width: 53px;
@@ -445,6 +442,14 @@ h1 {
       -webkit-transform: translateY(-50%);
       -moz-transform: translateY(-50%);
       -o-transform: translateY(-50%); }
+  .comment-menu .replyArea {
+    margin-bottom: 20px;
+    background-color: #222222;
+    border: 0px;
+    width: 100%;
+    color: white;
+    font-size: 14px;
+    padding: 15px; }
 
 .navbar {
   -moz-border-radius: 0;
