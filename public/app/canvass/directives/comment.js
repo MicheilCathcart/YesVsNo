@@ -52,8 +52,6 @@
 	
 					var loadComments = function () {
 						
-						console.log('Run Load Comments');
-						
 						$scope.comments = [];
 						
 							getComments.comments().success(function(data){
@@ -171,6 +169,7 @@
 								// Hide the comment menu
 								
 								comment.commentMenuVisible = false;
+								comment.replyAreaVisible = false;
 							
 							}
 
@@ -182,20 +181,10 @@
 							console.log('Error In Posting');
 							console.log(response);
 						});
-						
 
 					}
 					
-					
-					// Toggle Comment Menu
-					
-					$scope.toggleCommentMenu = function(comment) {
-						if ( comment.commentMenuVisible == undefined || comment.commentMenuVisible == false ) {
-							comment.commentMenuVisible = true;
-						} else if ( comment.commentMenuVisible == true ) {
-							comment.commentMenuVisible = false;
-						}
-					}
+			
 
 	            }
         	}

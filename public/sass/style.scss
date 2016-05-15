@@ -250,12 +250,14 @@ h1 {
 .comment { 
 	
 	position: relative;
-		 .user, .level { 
+		 .user, .level, .tag { 
 				&.One {
 					color: $colour1; 
+					border-color: $colour1;
 				}
 				&.Two {
 					color: $colour2; 
+					border-color: $colour2;
 				}
 			 }
 }
@@ -266,7 +268,7 @@ h1 {
 	background-color: $canvassBackground;
 	padding-bottom: $globalMargin; 
 	padding-top: $globalMargin; 
-	padding-right: 40px; 
+	padding-right: 20px; 
 } 
 
 .commentWrap:hover { cursor: pointer; } 
@@ -282,6 +284,18 @@ h1 {
 	height: 100vh;
 	top:0;
 	border-left: 1px dashed $menuBackground;
+}
+
+.comment-tags {
+	margin-top:15px;
+	.tag {
+		padding: 5px 8px;
+		border: 1px solid;
+		display:inline-block;
+		margin-right: 10px;
+		font-size: 11px;
+		color: white !Important;
+	}
 }
 
 /////////////// COMMENT MENU ///////////////
@@ -309,16 +323,40 @@ h1 {
 		&:hover { 
 		}
 	}
-	.replyArea {
-		margin-bottom: 20px;
-		background-color: #222222;
-		border: 0px;
-		width: 100%;
-		color: white;
-		font-size: 14px;
-		padding: 15px;
-	}
 } 
+
+.reply-area {
+    margin-bottom: 20px;
+	.reply-field {
+			background-color: $menuBackground;
+			border: 0px;
+			width: 100%;
+			color: white;
+			font-size: 14px;
+			padding: 15px;
+			margin-bottom: 0px;
+		}
+	.reply-menu {	
+		background-color: $menuBackground;
+		border-top: 1px solid $replyMenuBorder;
+		margin-top: -5px;
+		.reply-menu-button {
+			color:$buttonColour;
+			cursor:pointer;
+			padding: 10px 30px;
+			&.pull-left {
+				border-right: 1px solid $replyMenuBorder;
+			}
+			&.pull-right {
+				border-left: 1px solid $replyMenuBorder;
+			}
+			&:hover {
+				color:white;
+			}
+		}
+	}
+	
+}
 
 /////////////// BOOTSTRAP OVERIDES ///////////////
 

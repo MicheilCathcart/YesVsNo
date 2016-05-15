@@ -1,6 +1,6 @@
 ﻿<div ng-repeat="comment in comments | orderBy:'-level'" class="comment">
 		
-	<div class="commentWrap" style="margin-left:{{ (comment.tier - 1) * 32 }}px" ng-click="toggleCommentMenu(comment)">
+	<div class="commentWrap" style="margin-left:{{ (comment.tier - 1) * 32 }}px" ng-click="comment.commentMenuVisible =! comment.commentMenuVisible; comment.replyAreaVisible = false">
 		
 		<div class="commentTitle">
 			<div class="user pull-left {{ comment.comment_vote }}">
@@ -16,12 +16,14 @@
 		{{ comment.comment }}
 		</div>	
 		
+		<div class="comment-tags" ng-if="comment.comment_tags.length > 0">
+			<div class="tag {{ comment.comment_vote }}" ng-repeat="tag in comment.comment_tags">{{ tag }}</div>
+		</div>	
+		
 	</div>
 	
 	<div ng-show="comment.commentMenuVisible" class="comment-menu">
 
-		<textarea class="replyArea" rows="5" placeholder="Reply" ng-model="comment.userComment" ng-blur="addPostComment(comment)"/>
-		
 		<div class="button-wrap">
 		
 		<div class="circle-button" ng-click="commentUp(comment)">
@@ -34,7 +36,7 @@
 				<path d="M0.945692884,9 L14.0812266,9 C14.3176498,9 14.554073,8.88757807 14.7378277,8.69146426 C14.9215824,8.49535045 15,8.27175573 15,7.9907009 C15,7.73837613 14.9215824,7.48605135 14.7378277,7.28993754 L8.16947566,0.308535739 C7.98572097,0.112421929 7.74929775,0 7.51287453,0 C7.25070225,0 7.04002809,0.112421929 6.85627341,0.308535739 L0.28909176,7.28993754 C0.105337079,7.48605135 0,7.73837613 0,7.9907009 C0,8.27175573 0.105337079,8.49535045 0.28909176,8.69146426 C0.472846442,8.88757807 0.682350187,9 0.945692884,9" id="Fill-55" fill="#808080" transform="translate(7.500000, 4.500000) scale(1, -1) translate(-7.500000, -4.500000) "></path>
 			</svg>
 		</div>
-		<div class="circle-button" ng-click="addPostComment(comment)">
+		<div class="circle-button" ng-click="comment.replyAreaVisible =! comment.replyAreaVisible">
 			<svg width="17px" height="14px">
 				 <path d="M12.3064863,12.5171025 C11.1613519,12.963698 9.86844028,13.2150772 8.5,13.2150772 C3.80557963,13.2150772 0,10.2567814 0,6.6075386 C0,2.9582958 3.80557963,0 8.5,0 C13.1944204,0 17,2.9582958 17,6.6075386 C17,8.37744339 16.1048102,9.98481613 14.6471968,11.1709786 L15.1923828,14 L12.3064863,12.5171025 Z" id="Combined-Shape" fill="#808080"></path>
 			</svg>
@@ -43,7 +45,14 @@
 		</div>
 	</div>
 	
-	
+	<div ng-show="comment.replyAreaVisible" class="reply-area">
+		<textarea class="reply-field" rows="5" placeholder="Reply" ng-model="comment.userComment"/>
+		<div class="reply-menu">
+			<div class="reply-menu-button pull-left">Add Source</div>
+			<div class="reply-menu-button pull-right" ng-click="addPostComment(comment)">Reply</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
 	
 	<div class="comment-border" style="margin-left:{{ (comment.tier - 1) * 32 }}px"></div>
 	<div ng-if="comment.tier > 1" class="comment-border-left" style="left:{{ (comment.tier - 2) * 32 }}px"></div>

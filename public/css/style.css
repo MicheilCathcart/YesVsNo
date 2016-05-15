@@ -386,10 +386,12 @@ h1 {
     background-color: #1E1E1E; } }
 .comment {
   position: relative; }
-  .comment .user.One, .comment .level.One {
-    color: #007985; }
-  .comment .user.Two, .comment .level.Two {
-    color: #922857; }
+  .comment .user.One, .comment .level.One, .comment .tag.One {
+    color: #007985;
+    border-color: #007985; }
+  .comment .user.Two, .comment .level.Two, .comment .tag.Two {
+    color: #922857;
+    border-color: #922857; }
 
 .commentWrap {
   animation-name: commentAnimation;
@@ -397,7 +399,7 @@ h1 {
   background-color: #1E1E1E;
   padding-bottom: 20px;
   padding-top: 20px;
-  padding-right: 40px; }
+  padding-right: 20px; }
 
 .commentWrap:hover {
   cursor: pointer; }
@@ -416,6 +418,16 @@ h1 {
   height: 100vh;
   top: 0;
   border-left: 1px dashed #222222; }
+
+.comment-tags {
+  margin-top: 15px; }
+  .comment-tags .tag {
+    padding: 5px 8px;
+    border: 1px solid;
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 11px;
+    color: white !Important; }
 
 .comment-menu {
   margin: 0 auto;
@@ -442,14 +454,31 @@ h1 {
       -webkit-transform: translateY(-50%);
       -moz-transform: translateY(-50%);
       -o-transform: translateY(-50%); }
-  .comment-menu .replyArea {
-    margin-bottom: 20px;
+
+.reply-area {
+  margin-bottom: 20px; }
+  .reply-area .reply-field {
     background-color: #222222;
     border: 0px;
     width: 100%;
     color: white;
     font-size: 14px;
-    padding: 15px; }
+    padding: 15px;
+    margin-bottom: 0px; }
+  .reply-area .reply-menu {
+    background-color: #222222;
+    border-top: 1px solid #3C3C3C;
+    margin-top: -5px; }
+    .reply-area .reply-menu .reply-menu-button {
+      color: #9C9C9C;
+      cursor: pointer;
+      padding: 10px 30px; }
+      .reply-area .reply-menu .reply-menu-button.pull-left {
+        border-right: 1px solid #3C3C3C; }
+      .reply-area .reply-menu .reply-menu-button.pull-right {
+        border-left: 1px solid #3C3C3C; }
+      .reply-area .reply-menu .reply-menu-button:hover {
+        color: white; }
 
 .navbar {
   -moz-border-radius: 0;
